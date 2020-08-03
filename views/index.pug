@@ -1,0 +1,127 @@
+extends layout
+
+block content
+  nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+    .container
+      a.navbar-brand(href='/')
+        img(src='/images/logogry.png' alt='logo' title="Sweetpea Travel's")
+      h2 Sweetpea Travel&apos;s
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarResponsive')
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link.active(href='/') Home
+          li.nav-item
+            a.nav-link(href='about') About
+          li.nav-item
+            a.nav-link(href='contact') Contact
+          li.nav-item
+            a.nav-link(href='register') Register
+  br
+  // - Carousel
+  .container-fluid
+    #carousel.carousel.slide(data-ride='carousel' data-interval='6500')
+      .carousel-inner
+        .carousel-item.active
+          img.w-100(src='/images/mountain3r.jpg' alt='Mountains')
+          .carousel-caption
+            .container
+              .row.justify-content-center
+                .col-10.bg-custom.d-none.d-md-block.py-3.p-0
+                  h1 SWEETPEA TRAVEL&apos;S
+                  br
+                  div(clas='border-top border-primary w-50 mx-auto my-3')
+                  h3.pb-3 Step Out of Your Comfort Zone;
+                  h6 Experience it Solo!
+        .carousel-item
+          img.w-100(src='/images/Hooverdam.jpg' alt='Hooverdam')
+        .carousel-item
+          img.w-100(src='/images/jamaicapool.jpg' alt='Pool')
+        .carousel-item
+          img.w-100(src='/images/vegas.jpg' alt='Vegas')
+      a.carousel-control-prev(href='#carousel' role='button' data-slide='prev')
+        span.fas.fa-chevron-left.fa-2x
+      a.carousel-control-next(href='#carousel' role='button' data-slide='next')
+        span.fas.fa-chevron-right.fa-2x
+  // Quote
+  .jumbotron
+    .quote
+      #quoteDisplay.font-italic
+      br
+      button.button(onclick='newQuote()') Click Me for a Quote!
+  // Fixed Image
+  // <div class="fixed-bg"></div>
+  // Vacay Packages
+  .text-center
+    h1.display-3 Vacation Packages
+  br
+  br
+  .container
+    .responsive
+      .gallery
+        a(href='./packages?name=Caribbean+New+Year')
+          img.img-thumbnail(src='/images/tarizonarocks.jpg' alt='Arizona' title='Arizona')
+        .desc
+          | The beauty of Arizona is not limited to the Grand Canyon
+          | and golfing, there is so much more to uncover. Discover all the unique experiences now.
+    .responsive
+      .gallery
+        a(href='./packages')
+          img.img-thumbnail(src='/images/winetour.jpg' alt='Wine Tour' title='Napa Valley Wine Tour')
+        .desc
+          | Red, White, or a Ros&eacute;?
+          br
+          | Whether you are going it solo; with one friend; or there
+          |                     is a group of you; a Napa Valley Wine Tour is for everyone.
+    .responsive
+      .gallery
+        a(href='./packages')
+          img.img-thumbnail(src='/images/fishing.jpg' alt='retreat' title='Rockies Retreat')
+        .desc
+          | Come relax at Wellness Lodge for a week, or more. Yoga, meditation, horseback
+          | riding, hiking, and so much more, await you in the Rockies.
+    .responsive
+      .gallery
+        a(href='./packages')
+          img.img-thumbnail(src='/images/tree.jpg' alt='Australia' title='Australia')
+        .desc
+          | Not only does it match every taste, budget, age, or
+          | interests, but Australia also delivers unique experiences
+          | impossible to find anywhere else.
+  .clearfix
+  // Connect
+  .jumbotron
+    .row.text-center
+      .col-12
+        h2 Connect With Us
+      .col-12.social.padding
+        a(href='#')
+          i.fab.fa-facebook
+        a(href='#')
+          i.fab.fa-twitter
+        a(href='#')
+          i.fab.fa-instagram
+  // Footer
+  footer
+    .container
+      .row.text-center
+        .col-md-4
+          img(src='/images/logoG2.jpg')
+        .col-md-4
+          .font-weight-bold
+            h2 Sweetpea Travel&apos;s
+            hr.dark
+            p 587-913-2000
+            p info@sweetpeatravels.ca
+            p 123 Carenden Road S.W.
+            p Calgary, AB. T2X 
+        .col-md-4
+          .font-weight-bold
+            h3 Hours
+            hr.dark
+            p Monday-Friday: 10am-5pm
+            p Saturday: 10am-3pm
+            p Sunday and Holidays: Closed
+        .col-12
+          h5(font-weight='bold') &copy; Sweetpea Travel&apos;s

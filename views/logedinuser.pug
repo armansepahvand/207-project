@@ -1,0 +1,127 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title User Profile
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    script(src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
+    link(href="./stylesheets/registerstylesheet.css" link="" rel="stylesheet")
+    script(src="js/register.js")
+    link(href="./stylesheets/userprofile.css" rel="stylesheet")
+  body
+    nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+      .container
+        a.navbar-brand(href="/")
+          img(src="images/logogry.png" alt="logo" title="Logo")
+        h2 Sweetpea Travel's
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarResponsive")
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href="/") Home
+            li.nav-item
+              a.nav-link(href="about") About
+            li.nav-item
+              a.nav-link(href="contact") Contact
+            li.nav-item
+              a.nav-link.active(href="register") Register
+    .container
+      form(name="myForm" action="/registerdata" onsubmit="return validateForm()" method="GET")
+        // profile page
+        link#bootstrap-css(href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet")
+        script(src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
+        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        // ---- Include the above in your HEAD tag --------
+        .container.emp-profile
+          form(method="post")
+            .row
+              .col-md-4
+                .profile-img
+                  img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="")
+                  .file.btn.btn-lg.btn-primary
+                    | Change Photo
+                    input(type="file" name="file")
+              .col-md-6
+                .profile-head
+                  h5
+                    | Kshiti Ghelani
+                  h6
+                    | Love travel around the world!
+                  p.proile-rating
+                    | Rewards: 
+                    span Gold
+                  ul#myTab.nav.nav-tabs(role="tablist")
+                    li.nav-item
+                      a#home-tab.nav-link.active(data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true") About
+                    li.nav-item
+                      a#profile-tab.nav-link(data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false") Password
+              .col-md-2
+                input.profile-edit-btn(type="submit" name="btnAddMore" value="Edit Profile")
+            .row
+              .col-md-4
+                .profile-work
+                  p Bookings
+                  a(href="") Booking 1
+                  br
+                  a(href="") Booking 2
+                  br
+                  a(href="") Booking 3
+              .col-md-8
+                #myTabContent.tab-content.profile-tab
+                  #home.tab-pane.fade.show.active(role="tabpanel" aria-labelledby="home-tab")
+                    .row
+                      .col-md-6
+                        label User Id
+                      .col-md-6
+                        p Kshiti123
+                    .row
+                      .col-md-6
+                        label Name
+                      .col-md-6
+                        p Kshiti Ghelani
+                    .row
+                      .col-md-6
+                        label Email
+                      .col-md-6
+                        p kshitighelani@gmail.com
+                    .row
+                      .col-md-6
+                        label Home Phone
+                      .col-md-6
+                        p 123 456 7890
+                    .row
+                      .col-md-6
+                        label Business Phone
+                      .col-md-6
+                        p 123 456 4321
+                    .row
+                      .col-md-6
+                        label Address
+                      .col-md-6
+                        p 123 Fake Road SE
+                    .row
+                      .col-md-6
+                        label City
+                      .col-md-6
+                        p Calgary
+                    .row
+                      .col-md-6
+                        label Province
+                      .col-md-6
+                        p Alberta
+                  #profile.tab-pane.fade(role="tabpanel" aria-labelledby="profile-tab")
+                    form#tab2
+                      label New Password
+                      input.input-xlarge(type="password")
+                      div
+                        button.btn.btn-primary Update
+    // Footer
+    footer
+      .col-12
+        .font-weight-bold
+          h5 © Sweetpea Travel's

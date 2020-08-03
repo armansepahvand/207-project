@@ -1,0 +1,91 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Sweetpea Travel&apos;s
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+    script(src='https://use.fontawesome.com/releases/v5.0.8/js/all.js')
+    link(href='/stylesheets/about.css' rel='stylesheet')
+    script(src='/javascripts/index.js')
+  body
+    nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+      .container
+        a.navbar-brand(href="/")
+          img(src="images/logogry.png" alt="logo" title="Logo")
+        h2 Sweetpea Travel's
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarResponsive")
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href="/") Home
+            li.nav-item
+              a.nav-link.active(href="about") About
+            li.nav-item
+              a.nav-link(href="contact") Contact
+            li.nav-item
+              a.nav-link(href="register") Register
+    // About
+    .container
+      .about
+        h2 About Sweetpea
+        p
+          | Many years ago, as many of us do, I discovered my love of traveling.
+          | I made a list of all the places I wanted to go to. I told my friends of my plans and they all were
+          | excited.
+          | Everyone wanted to go on trips together. As life would have it, one by one, each of my friends started
+          | falling off the list.
+          | And that was just for one trip.
+          | So I decided to try it solo. I researched like crazy. I talked to so many travel companies. My travel
+          | binder was
+          | chaotic.
+          br
+          |                 That was 10 years ago.
+          br
+          |                 5 years ago, I started to blog my trips. It turns out, a lot of people wanted to know how they too could
+          |                 travel solo.
+          |                 My blogs became a website, my website became a company, and now we are a fully licensed travel agency.
+          |                 If you have ever wanted to travel solo, but have no idea where to start, and/or feeling overwhelmed,
+          |                 check out our 
+          a(href="contact.html" target="blank") Contact
+          |  page, or 
+          a(href="register" target="blank") Register 
+          | to become a member.
+      .container
+        .your
+          h2.font-weight-bold
+            | The world is too big to wait around for someone
+            | to travel with.
+            br
+            | Let us help you find YOUR way.
+    // Form
+    form(action="")
+      .container
+        p.font-weight-bold
+          | Hit subscribe to recieve the latest news, deals, and adventures Sweetpea Travel's has been on.
+        input(type="text" placeholder="Email address" name="email" required="")
+        .checkbox
+          label
+            input(type="checkbox" value="")
+            |  Yes, I would like to read some travel
+            |                     news
+        .checkbox
+          label
+            input(type="checkbox" value="")
+            |  Yes, I want to find out the latest
+            |                     travel deals
+        .checkbox
+          label
+            input(type="checkbox" value="")
+            |  Yes, I would love to be notified when a new
+            |                     blog is posted
+      .container
+        input(type="submit" value="Submit" onclick="return confirm('Are you ready to submit?')")
+    // Footer
+    footer
+      .font-weight-bold
+        h5 © Sweetpea Travel's

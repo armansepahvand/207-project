@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=Georgia:400,500,700");
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Georgia", sans-serif;
+  color: #222;
+  background-color: #f9ddfa;
+}
+/*Nav Bar*/
+.navbar-brand img {
+  height: 4rem;
+}
+.navbar {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.nav-item {
+  padding: 0.5rem;
+}
+.navbar h2 {
+  font-size: 3rem;
+  color: #6a2c70;
+}
+.nav-link {
+  color: #5b5555 !important;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #860d86 !important;
+}
+
+/*Carousel*/
+#carousel {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+.carousel-inner {
+  max-height: 38rem !important;
+}
+.carousel-caption {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+}
+.bg-custom {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 1rem;
+}
+.carousel-caption h1 {
+  font-size: 3.8rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 1);
+}
+.border-primary {
+  border-top: 0.2rem solid #4981b3 !important;
+}
+.carousel-caption h3 {
+  font-size: 2.2rem;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 1);
+}
+.carousel-caption h6 {
+  font-size: 2.2rem;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 1);
+}
+.jumbotron {
+  text-align: center;
+  background-color: #f9ddfa;
+}
+
+/*Quote*/
+.quote {
+  font-size: 1.5rem;
+}
+
+.button {
+  background-color: #6a2c70;
+  color: white;
+  font-size: 1.5;
+  border: 2px;
+}
+.button:hover {
+  opacity: 0.7;
+}
+
+/*Fixed image*/
+/*.fixed-bg {
+  background-image: url("../images/river.jpg");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}*/
+
+/*Vacay Packages*/
+
+div.gallery {
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: #b4fcb4;
+  border: 1px solid #b4fcb4;
+}
+
+div.gallery:hover {
+  border: 2px solid #fe91ca;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 10px 10px 10px;
+  float: left;
+  width: 25%;
+}
+
+/*Connect*/
+.social a {
+  padding-top: 3rem;
+  font-size: 4.5rem;
+  padding: 3rem;
+  padding-bottom: 3rem;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+.fa-twitter {
+  color: #00aced;
+}
+.fa-instagram {
+  color: #517fa8;
+}
+.fa-facebook :hover,
+.fa-twitter :hover,
+.fa-instagram :hover {
+  color: #d5d5d5;
+}
+/*footer*/
+footer {
+  background-color: #b4fcb4;
+  color: #222;
+  padding-top: 2rem;
+}
+
+/*hr.light {
+  border-top: 2px #d5d5d5;
+  width: 100%;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}*/
+
+footer a {
+  color: #222;
+  font-weight: bold;
+}
+/*Media Queries*/
+
+/* Devices under 1199px (xl) */
+@media (max-width: 1199.98px) {
+  .carousel-caption h1 {
+    font-size: 2.8rem;
+  }
+  .carousel-caption h3 {
+    font-size: 1.8rem;
+  }
+  .carousel-caption h6 {
+    font-size: 1.8rem;
+  }
+}
+/* Devices under 992px (lg) */
+@media (max-width: 991.98px) {
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption h6 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

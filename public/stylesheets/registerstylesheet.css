@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Georgia:400,500,700");
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Georgia", sans-serif;
+  color: #222;
+}
+/*Navbar*/
+.navbar-brand img {
+  height: 4rem;
+}
+.navbar {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.nav-item {
+  padding: 0.5rem;
+}
+.navbar h2 {
+  font-size: 3rem;
+  color: #6a2c70;
+}
+.nav-link {
+  color: #5b5555 !important;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #860d86 !important;
+}
+.nav-link {
+  color: #5b5555 !important;
+}
+
+/*Registration Form*/
+.register {
+  padding-top: 2rem;
+  font-size: 3rem;
+  color: #6a2c70;
+  padding-bottom: 3rem;
+}
+input[type="text"],
+select,
+textarea {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type="submit"] {
+  background-color: #fe91ca;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+input[type="reset"] {
+  background-color: #fe91ca;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+input[type="reset"]:hover {
+  background-color: #45a049;
+}
+
+/*Image*/
+.gallery img {
+  padding-top: 3rem;
+  max-height: 25rem !important;
+  border-radius: 1rem;
+}
+
+/*Footer*/
+footer {
+  padding-top: 2rem;
+  text-align: center;
+  background-color: #cff6cf;
+  padding-bottom: 1rem;
+}

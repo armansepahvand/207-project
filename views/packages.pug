@@ -1,0 +1,76 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Sweetpea Travel's
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+    script(src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
+    link(href="./stylesheets/style.css" rel="stylesheet")
+    script(src="./js/index.js")
+    
+
+  body
+    name
+    // Navigation
+    nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
+      .container
+        a.navbar-brand(href="/")
+          img(src="images/logogry.png" alt="logo" title="Sweetpea Travel's")
+        h2 Sweetpea Travel's
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarResponsive")
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link.active(href="/") Home
+            li.nav-item
+              a.nav-link(href="about") About
+            li.nav-item
+              a.nav-link(href="contact") Contact
+            li.nav-item
+              a.nav-link(href="register") Register
+    .col-12
+      h5(font-weight="bold") © Sweetpea Travel's
+      p#name
+            
+    .container.m-5
+      table.table.table-hover
+        thead
+          tr
+            td PkgName
+            td PkgStartDate
+            td PkgEndDate
+            td PkgDesc
+            td PkgPrice
+            
+        tbody
+            tr.table-info
+              td= packages.PkgName
+              td= packages.PkgStartDate
+              td= packages.PkgEndDate
+              td= packages.PkgDesc
+              td= packages.PkgBasePrice + packages.PkgAgencyCommission
+              
+    script. 
+       function getQueryVariable(variable){
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+        }
+        let name=getQueryVariable("name");
+        let newname=name.replace(/\+/g, " ");
+        console.log(name);
+        console.log(newname);
+        document.getElementById("name").innerText= newname;
+        
+        
+      
+      

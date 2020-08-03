@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Georgia:400,500,700");
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Georgia", sans-serif;
+  color: #222;
+}
+
+/*Navbar*/
+.navbar-brand img {
+  height: 4rem;
+}
+.navbar {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.nav-item {
+  padding: 0.5rem;
+}
+.navbar h2 {
+  font-size: 3rem;
+  color: #6a2c70;
+}
+.nav-link {
+  color: #5b5555 !important;
+}
+.nav-link.active,
+.nav-link:hover {
+  color: #860d86 !important;
+}
+
+/*FORM*/
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color: #fe91ca;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Footer*/
+footer {
+  padding-top: 2rem;
+  text-align: center;
+  background-color: #cff6cf;
+  padding-bottom: 1rem;
+}
+.contact .info-box {
+  color: #444444;
+  background-color: #fe91ca;
+  text-align: center;
+  box-shadow: 0 0 10px #6b4d5d;
+  padding: 20px 0 30px 0;
+}
+
+.contact .info-box i {
+  font-size: 32px;
+  color: #c71853c0;
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px dotted #fe91ca;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: hsl(200, 4%, 27%);
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+
