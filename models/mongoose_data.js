@@ -27,7 +27,7 @@ exports.createUser = function (user, callBack) {
 
 // Get the use using the userId
 exports.getUser = function (userId, callBack) {
-    User.findById(userId, (err, data) => {
+    Customer.findById(userId, (err, data) => {
         //console.log('In getUser')
         //console.log(err, data);
         callBack(err, data); // Send the results back
@@ -36,7 +36,7 @@ exports.getUser = function (userId, callBack) {
 
 // Get the use using the userId
 exports.getUserName = function (Username, callBack) {
-    User.findOne({ Username }, (err, data) => {
+    Customer.findOne({CustUsername : username }, (err, data) => {
         //console.log('In getUser')
         //console.log(err, data);
         callBack(err, data); // Send the results back
@@ -47,5 +47,24 @@ exports.getPackage = function (PkgName, callBack) {
         //console.log('In getUser')
         //console.log(err, data);
         callBack(err, data); // Send the results back
+    });
+}
+
+exports.verifyLogin = function (username, password, callBack) {
+    Customer.findOne({ CustUsername : username }, (err, user) => {
+        if (err) return callBack(err);
+        // If username not found
+        if (!user) return callBack(null, false, { message: "Incorrect username" });
+        //compare the given password with the store encyption
+        bcrypt.compare(password, user.CustPassword, (err, res) => {
+            if (err) return callBack(err);
+            if (res) {
+                // passwords match! log user in
+                return callBack(null, user, {message: "DWelcome "+user.CustFirstName});
+            } else {
+                // passwords do not match!
+                return callBack(null, false, { message: "Incorrect password" });
+            }
+        })
     });
 }
