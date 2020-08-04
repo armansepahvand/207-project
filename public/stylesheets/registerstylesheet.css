@@ -45,7 +45,7 @@ body {
   color: #6a2c70;
   padding-bottom: 3rem;
 }
-input[type="text"],
+.binput,
 select,
 textarea {
   width: 50%;

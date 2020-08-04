@@ -20,13 +20,13 @@ body {
   z-index: 1;
 }
 
-.navbar {
+/* .navbar {
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   z-index: 1;
-}
+} */
 .nav-item {
   padding: 0.5rem;
 }
@@ -34,9 +34,9 @@ body {
   font-size: 3rem;
   color: #6a2c70;
 }
-.nav-link {
+/* .nav-link {
   color: #5b5555 !important;
-}
+} */
 .nav-link.active,
 .nav-link:hover {
   color: #860d86 !important;
