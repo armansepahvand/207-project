@@ -1,7 +1,8 @@
 const Agency = require('./mongoose_models/Agency_model')
 const Agent = require('./mongoose_models/Agent_model')
-const User = require('./mongoose_models/User_model')
+const Customer = require('./mongoose_models/User_model')
 const Package = require('./mongoose_models/Package_model')
+const bcrypt = require('bcryptjs')
 // This function is retrieving the contact info from the DB
 exports.getContactData = (agencyId, callBack) => {
     if (!agencyId)
@@ -12,7 +13,9 @@ exports.getContactData = (agencyId, callBack) => {
 
 // Creates a new user
 exports.createUser = function (user, callBack) {
-    const myuser = new User(user);  // User Mongoose Model
+    bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
+        user.CustPassword = hashedPassword;})
+    const myuser = new Customer(user);  // User Mongoose Model
     myuser.save(function (err) {    // Saves the user to the DB
         //if (err) return console.error(err);
         callBack(err, 'Ok');

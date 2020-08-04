@@ -37,15 +37,13 @@ html(lang="en")
         .register
           h2 Register to become a Member
       .container
-        form(name="myForm" action="/registerdata" onsubmit="return Validate()" method="POST")
+        form(name="myForm" action="/register" onsubmit="return Validate()" method="POST")
           .form-group
             label(for="CustFirstName") First Name:
             input#CustFirstName.form-control(type="text" placeholder="First Name" name="CustFirstName" required="")
           .form-group
             label(for="CustLastName") Last Name:
             input#CustLastName.form-control(type="text" placeholder="Last Name" name="CustLastName" required="")
-            label(for="age") Age:
-            input#age.form-control(type="text" placeholder="Age" name="age")
             label(for="CustAddress") Street Address:
             input#CustAddress.form-control(type="text" placeholder="Street Address" name="CustAddress")
             label(for="CustCity") City:
@@ -54,25 +52,25 @@ html(lang="en")
             input#CustProv.form-control(type="text" placeholder="Province" name="CustProv")
             label(for="CustPostal") Postal Code:
             input#CustPostal.form-control(type="text" placeholder="Postal Code" name="CustPostal")
-            label(for="CustHomePhone") Home Phone:
+            label(for="CustPhone") Phone Number:
             input#CustHomePhone.form-control(type="text" placeholder="Home Phone" name="CustHomePhone" required="")
-            label(for="CustBusPhone") Business Phone:
-            input#CustBusPhone.form-control(type="text" placeholder="Business Phone" name="CustBusPhone")
-            label(for="password") Password:
-            input#password.form-control(type="text" placeholder="Password" name="passWord" required="")
-          .form-group
-            .form-check-inline
-              label.form-check-label
-                input.form-check-input(type="radio" name="gender" value="man")
-                | Man
-            .form-check-inline
-              label.form-check-label
-                input.form-check-input(type="radio" name="gender" value="woman")
-                | Woman
-            .form-check-inline
-              label.form-check-label
-                input.form-check-input(type="radio" name="gender" value="other")
-                | Other
+            label(for="CustUsername") User Name:
+            input#password.form-control(type="text" placeholder="Username" name="CustUsername" required="")
+            label(for="CustPassword") Password:
+            input#password.form-control(type="text" placeholder="Password" name="CustPassword" required="")
+          //- .form-group
+          //-   .form-check-inline
+          //-     label.form-check-label
+          //-       input.form-check-input(type="radio" name="gender" value="man")
+          //-       | Man
+          //-   .form-check-inline
+          //-     label.form-check-label
+          //-       input.form-check-input(type="radio" name="gender" value="woman")
+          //-       | Woman
+          //-   .form-check-inline
+          //-     label.form-check-label
+          //-       input.form-check-input(type="radio" name="gender" value="other")
+          //-       | Other
           input(type="submit" value="Submit")
           input(type="reset" value="Reset")
     // Footer
