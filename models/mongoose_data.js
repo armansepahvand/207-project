@@ -15,6 +15,7 @@ exports.getContactData = (agencyId, callBack) => {
 exports.createUser = function (user, callBack) {
     bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
         user.CustPassword = hashedPassword;})
+        console.log(hashedPassword);
     const myuser = new Customer(user);  // User Mongoose Model
     myuser.save(function (err) {    // Saves the user to the DB
         //if (err) return console.error(err);
