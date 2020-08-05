@@ -2,6 +2,7 @@ const Agency = require('./mongoose_models/Agency_model')
 const Agent = require('./mongoose_models/Agent_model')
 const Customer = require('./mongoose_models/User_model')
 const Package = require('./mongoose_models/Package_model')
+const Booking = require('./mongoose_models/Booking_model')
 const bcrypt = require('bcryptjs')
 // This function is retrieving the contact info from the DB
 exports.getContactData = (agencyId, callBack) => {
@@ -24,6 +25,15 @@ exports.createUser = function (user, callBack) {
          })
     })
 }
+
+exports.createBooking = function (booking, callBack) {
+             
+    const mybooking = new Booking(booking);  // User Mongoose Model
+    mybooking.save(function (err) {    // Saves the user to the DB
+        //if (err) return console.error(err);
+        callBack(err, 'Ok');
+         })
+    }
 
 /*// Updates Customer/user information
 exports.updateUser = function (user, callBack) {

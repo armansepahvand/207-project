@@ -51,8 +51,7 @@ block content
       #quoteDisplay.font-italic
       br
       button.button(onclick='newQuote()') Click Me for a Quote!
-  // Fixed Image
-  // <div class="fixed-bg"></div>
+  
   // Vacay Packages
   .text-center
     h1.display-3 Vacation Packages
@@ -97,11 +96,11 @@ block content
       .col-12
         h2 Connect With Us
       .col-12.social.padding
-        a(href='#')
+        a(href='www.facebook.com')
           i.fab.fa-facebook
-        a(href='#')
+        a(href='www.twitter.com')
           i.fab.fa-twitter
-        a(href='#')
+        a(href='www.instagram.com')
           i.fab.fa-instagram
   // Footer
   footer
@@ -126,7 +125,9 @@ block content
             p Sunday and Holidays: Closed
         .col-12
           h5(font-weight='bold') &copy; Sweetpea Travel&apos;s//
-
+  script.
+    let data= currentUser;
+    console.log(data);
 
   h2
   | Go to our 
