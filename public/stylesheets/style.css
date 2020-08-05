@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Georgia:400,500,700");
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url("https://fonts.googleapis.com/css?family=Bitter");
 
 html,
 body {
@@ -9,6 +9,7 @@ body {
   color: #222;
   background-color: #f9ddfa;
 }
+
 /*Nav Bar*/
 .navbar-brand img {
   height: 4rem;
@@ -77,9 +78,8 @@ body {
 .quote {
   font-size: 1.5rem;
 }
-
 .button {
-  background-color: #6a2c70;
+  background-color: #7b3381;
   color: white;
   font-size: 1.5;
   border: 2px;
@@ -88,48 +88,33 @@ body {
   opacity: 0.7;
 }
 
-/*Fixed image*/
-/*.fixed-bg {
-  background-image: url("../images/river.jpg");
-  min-height: 400px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-}*/
-
 /*Vacay Packages*/
-
 div.gallery {
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
   background-color: #b4fcb4;
   border: 1px solid #b4fcb4;
 }
-
 div.gallery:hover {
   border: 2px solid #fe91ca;
 }
-
 div.gallery img {
   width: 100%;
   height: auto;
 }
-
 div.desc {
   padding: 15px;
   text-align: center;
 }
-
 * {
   box-sizing: border-box;
 }
-
 .responsive {
   padding: 0 10px 10px 10px;
   float: left;
   width: 25%;
 }
 
-/*Connect*/
+/*Social Media Connect*/
 .social a {
   padding-top: 3rem;
   font-size: 4.5rem;
@@ -150,24 +135,18 @@ div.desc {
 .fa-instagram :hover {
   color: #d5d5d5;
 }
+
 /*footer*/
 footer {
   background-color: #b4fcb4;
   color: #222;
   padding-top: 2rem;
 }
-
-/*hr.light {
-  border-top: 2px #d5d5d5;
-  width: 100%;
-  margin-top: 0.8rem;
-  margin-bottom: 1rem;
-}*/
-
 footer a {
   color: #222;
   font-weight: bold;
 }
+
 /*Media Queries*/
 
 /* Devices under 1199px (xl) */
@@ -200,7 +179,6 @@ footer a {
     margin: 6px 0;
   }
 }
-
 @media only screen and (max-width: 500px) {
   .responsive {
     width: 100%;
@@ -217,3 +195,13 @@ footer a {
   background-color: light;
   padding: 10px;
 } 
+
+/* footer {
+  position:relative;
+  width: 100%;
+  padding-top: 2rem;
+  text-align: center;
+  background-color: #cff6cf;
+  padding-bottom: 1rem;
+  bottom: 0;
+} */
