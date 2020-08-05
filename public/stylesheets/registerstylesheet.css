@@ -90,3 +90,8 @@ footer {
   background-color: #cff6cf;
   padding-bottom: 1rem;
 }
+.container {
+  border-radius: 5px;
+  background-color: light;
+  padding: 10px;
+} 

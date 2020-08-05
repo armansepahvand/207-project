@@ -34,7 +34,7 @@ body {
   font-size: 3rem;
   color: #6a2c70;
 }
-/* .nav-link {
+ .nav-link {
   color: #5b5555 !important;
 } */
 .nav-link.active,
@@ -101,3 +101,8 @@ footer {
   background-color: #cff6cf;
   padding-bottom: 1rem;
 }
+.container {
+  border-radius: 5px;
+  background-color: light;
+  padding: 10px;
+} 
