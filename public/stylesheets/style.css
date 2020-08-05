@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Georgia:400,500,700");
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url("https://fonts.googleapis.com/css?family=Bitter");
 
 html,
 body {
@@ -217,3 +217,13 @@ footer a {
   background-color: light;
   padding: 10px;
 } 
+
+/* footer {
+  position:relative;
+  width: 100%;
+  padding-top: 2rem;
+  text-align: center;
+  background-color: #cff6cf;
+  padding-bottom: 1rem;
+  bottom: 0;
+} */
