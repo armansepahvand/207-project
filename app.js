@@ -11,6 +11,8 @@ var contactRouter = require('./routes/contact');
 var registerRouter = require('./routes/register');
 var packagesRouter = require('./routes/packages');
 var logedinuserRouter = require('./routes/logedinuser');
+var bookingRouter = require('./routes/booking')
+var privateRouter = require('./routes/private')
 
 var app = express();
 
