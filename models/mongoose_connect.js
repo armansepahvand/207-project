@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const url = "mongodb://localhost:27017/travelexperts";
+// const url = "mongodb://localhost:27017/travelexperts";
+const url = "mongodb+srv://ThunderstormPantherBearAdmin:<ThunderstormPantherBear>@thunderstormpantherbear.wmwvd.azure.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 // Set up a mongoose connection
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
