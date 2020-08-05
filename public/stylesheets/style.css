@@ -212,3 +212,8 @@ footer a {
   display: table;
   clear: both;
 }
+.container {
+  border-radius: 5px;
+  background-color: light;
+  padding: 10px;
+} 
