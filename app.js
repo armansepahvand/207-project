@@ -11,12 +11,7 @@ var contactRouter = require('./routes/contact');
 var registerRouter = require('./routes/register');
 var packagesRouter = require('./routes/packages');
 var logedinuserRouter = require('./routes/logedinuser');
-<<<<<<< HEAD
-var bookingRouter = require('./routes/booking')
-var privateRouter = require('./routes/private')
-=======
 const configPassport = require('./configure_passport');
->>>>>>> 0f210105b20444b707fd2652a2ad3bc4141cdef7
 
 var app = express();
 
