@@ -27,11 +27,11 @@ block content
     table.table.table-hover
       thead
         tr
-          td PkgName
-          td PkgStartDate
-          td PkgEndDate
-          td PkgDesc
-          td PkgPrice
+          td Package Name
+          td Package Start Date
+          td Package End Date
+          td Package Description
+          td Package Price
           
       tbody
           tr.table-info
@@ -40,7 +40,10 @@ block content
             td= packages.PkgEndDate
             td= packages.PkgDesc
             td= packages.PkgBasePrice + packages.PkgAgencyCommission
-          tr= packages.imageurl
+  .container.m-5
+    center
+      img(src=packages.imageurl, alt=packages.PkgDesc)
+  
   footer.d-flex.justify-content-center.mt-auto
     .font-weight-bold
       h5 © Sweetpea Travel's
