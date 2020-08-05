@@ -63,7 +63,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:hover {
-  background-color: #45a049;
+  opacity: 0.7;
 }
 input[type="reset"] {
   background-color: #fe91ca;
@@ -73,7 +73,7 @@ input[type="reset"] {
   cursor: pointer;
 }
 input[type="reset"]:hover {
-  background-color: #45a049;
+  opacity: 0.7;
 }
 
 /*Image*/
@@ -87,8 +87,8 @@ input[type="reset"]:hover {
 footer {
   padding-top: 2rem;
   text-align: center;
-  background-color: #cff6cf;
-  padding-bottom: 1rem;
+  background-color: #b4fcb4;
+  padding-bottom: 2rem;
 }
 .container {
   border-radius: 5px;
