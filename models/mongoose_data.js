@@ -25,6 +25,20 @@ exports.createUser = function (user, callBack) {
     })
 }
 
+/*// Updates Customer/user information
+exports.updateUser = function (user, callBack) {
+    bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
+        user.CustPassword = hashedPassword;
+        console.log(hashedPassword);
+           
+    const myuser =   // User Mongoose Model
+    myuser.save(function (err) {    // Saves the user to the DB
+        //if (err) return console.error(err);
+        callBack(err, 'Ok');
+         })
+        })
+}*/
+
 // Get the use using the userId
 exports.getUser = function (userId, callBack) {
     Customer.findById(userId, (err, data) => {
