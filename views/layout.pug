@@ -20,6 +20,7 @@ html
       h6.bg-light.text-dark(style='text-align: right;margin-bottom: 0px;')= "Welcome " + currentUser.CustFirstName
         span(style='font-size:0.8em')
           a(href="/log-out") (Log Out)
+    
     else      
       form(action="/log-in" method="POST")
         .d-flex.justify-content-end.bg-light
@@ -32,7 +33,7 @@ html
             input.form-control.form-control-sm(name="password" placeholder="password" type="password")
           .col.mr-1
             button.btn.btn-info.btn-sm Log In
-          
+  
   //.jumbotron
     h1 Welcome to Travel Experts
   block content

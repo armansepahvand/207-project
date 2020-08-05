@@ -1,17 +1,17 @@
 const mongoose = require('../mongoose_connect');
-const { text } = require('express');
+
 // Creating the Agency Schema
 const BookingSchema = new mongoose.Schema({
     
     BookingDate: {
         type: Date,
-        required: true,
+        required: false,
         trim: true
     },
-    BookingNo: string,
-    TravelerCount: number,
+    BookingNo: String,
+    TravelerCount: Number,
     PCustomerId: String,
-    TripTypeId: string
+    TripTypeId: String
    
     // more fields defined below
 });
