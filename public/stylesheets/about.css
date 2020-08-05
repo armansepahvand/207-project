@@ -29,14 +29,12 @@ body {
 }
  .nav-link {
   color: #5b5555 !important;
-} */
+} 
 .nav-link.active,
 .nav-link:hover {
   color: #860d86 !important;
 }
-.nav-link {
-  color: #5b5555 !important;
-}
+
 
 /*ABOUT*/
 .about {
