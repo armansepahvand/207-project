@@ -43,7 +43,7 @@ block content
             td= packages.PkgEndDate
             td= packages.PkgDesc
             td= packages.PkgBasePrice + packages.PkgAgencyCommission
-  .container.m-5
+  .container.m-5(style= "padding-bottom: 230px")
     .row
       .col-lg-6
         .gallery
@@ -61,10 +61,10 @@ block content
             input.form-control(type="number" name="TravelerCount" placeholder="Traveler Count")
           .form-group
             label(for="PCustomerId" style="display:none" ) PCustomerId
-            input.form-control#Cid(type="text" placeholder="" name="PCustomerId" style="display:block" )
+            input.form-control#Cid(type="text" placeholder="" name="PCustomerId" style="display:none" )
             .form-group
             label(for="PackageName" style="display:none" ) PCustomerId
-            input.form-control#Pname(type="text" placeholder="" name="PackageName" style="display:block" )
+            input.form-control#Pname(type="text" placeholder="" name="PackageName" style="display:none" )
           .form-group
             label(for="TripTypeId") Trip Type Id
             input.form-control(type="text" name="TripTypeId" placeholder="Trip Type Id")
