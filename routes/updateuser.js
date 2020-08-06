@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('logedinuser', { title: 'Express' });
 });
 
-<<<<<<< HEAD
 // router.post('/', (req, res, next) => {
 //   //console.log(JSON.stringify(req.body));
 //   data.createUser(req.body, (err, message) => {
@@ -30,7 +29,6 @@ router.post('/', function(req,res,next){
     //   });
     res.send(req.user)
     
-=======
 //Basel's work on User Update function
 router.post('/logedinuser', currentUser, function(req,res,next){
   Customers.findById(req.customer._id).then(function(customer){
@@ -64,7 +62,6 @@ router.post('/logedinuser', currentUser, function(req,res,next){
           return res.json({customer: customer.toAuthJSON()});
       });
   }).catch(next);
->>>>>>> d69aafc492b2f9ccb489f20ef90c85c2d6463239
 });
 
 module.exports = router;
