@@ -50,25 +50,25 @@ html(lang="en")
 
 .container
   #error
-  form(name='f' method='GET' action='/register')
-    label(for='userId') User Id: 
-    input#userId.form-control(type='text' required='' name='userId' value='currentUser._id' placeholder='userId')
-    label(for='username') User Name: 
-    input#username.form-control(type='text' required='' name='username' placeholder='Username')
-    label(for='firstname') First Name: 
-    input#CustFirstName.form-control(type='text' required='' name='CustFirstName' placeholder='First Name')
-    label(for='lastname') Last Name: 
-    input#CustLastName.form-control(type='text' required='' name='CustLastName' placeholder='Last Name')
-    label(for='fname') Address: 
-    input#Address.form-control(type='text' name='CustAddress' placeholder='Address')
-    label(for='city') City: 
-    input#city.form-control(type='text' name='CustCity' placeholder='City')
-    label(for='province') Province: 
-    input#province.form-control(type='text' name='province' placeholder='Province')
-    label(for='home phone') Home phone: 
-    input#CustHomePhone.form-control(type='text' name='CustHomePhone' placeholder='home phone')
-    label(for='business phoone') Business Phone: 
-    input#CustBusPhone.form-control(type='text' name='CustBusPhone' placeholder='business phone')
+  form(name='f' method='PUT' action='/updateuser')
+    label(for='CustUsername') User Id: 
+    input#CustUsername.form-control(type='text' required='' name='CustUsername' value=currentUser.CustUsername placeholder='userId')
+    //label(for='username') User Name: 
+    //input#username.form-control(type='text' required='' name='username' placeholder='Username')
+    label(for='CustFirstName') First Name: 
+    input#CustFirstName.form-control(type='text' required='' name='CustFirstName' value=currentUser.CustFirstName placeholder='First Name')
+    label(for='CustLastName') Last Name: 
+    input#CustLastName.form-control(type='text' required='' name='CustLastName' value=currentUser.CustLastName placeholder='Last Name')
+    label(for='CustAddress') Address: 
+    input#CustAddress.form-control(type='text' name='CustAddress' value=currentUser.CustAddress placeholder='Address')
+    label(for='CustCity') City: 
+    input#CustCity.form-control(type='text' name='CustCity' value=currentUser.CustCity placeholder='City')
+    label(for='CustProvince') Province: 
+    input#CustProvince.form-control(type='text' name='CustProv' value=currentUser.CustProvince placeholder='Province')
+    label(for='CustHomePhone') Home phone: 
+    input#CustHomePhone.form-control(type='text' name='CustHomePhone' value=currentUser.CustHomePhone placeholder='home phone')
+    label(for='CustBusPhone') Business Phone: 
+    input#CustBusPhone.form-control(type='text' name='CustBusPhone' value=currentUser.CustBusPhone placeholder='business phone')
     label(for='password') Password: 
     input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
     label(for='password') Confirm Password: 
