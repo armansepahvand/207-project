@@ -20,7 +20,7 @@ block content
             a.nav-link(href="register") Register
           if currentUser
             li.nav-item
-              a.nav-link(href='logedinuser') Profile
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
   // About
   .container
     .about

@@ -114,6 +114,14 @@ exports.getPackage = function (PkgName, callBack) {
     });
 }
 
+exports.getBooking = function (id, callBack) {
+    Booking.find({ PCustomerId : id }, (err, data) => {
+        //console.log('In getUser')
+        //console.log(err, data);
+        callBack(err, data); // Send the results back
+    });
+}
+
 exports.verifyLogin = function (username, password, callBack) {
     Customer.findOne({ CustUsername: username }, (err, user) => {
         if (err) return callBack(err);
