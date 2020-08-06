@@ -96,6 +96,7 @@ div.gallery {
 }
 div.gallery:hover {
   border: 2px solid #fe91ca;
+    
 }
 div.gallery img {
   width: 100%;
@@ -108,7 +109,6 @@ div.desc {
 * {
   box-sizing: border-box;
 }
-
 .responsive {
   padding: 0 10px 10px 10px;
   float: left;
@@ -116,6 +116,7 @@ div.desc {
 }
 
 /*Meet the team*/
+
 .flip-card {
   background-color: #f9ddfa;
   width: 260px;
