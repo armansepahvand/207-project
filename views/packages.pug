@@ -1,7 +1,11 @@
 extends layout
 
 block content
-
+  input#Pvar(type="text" value=packages style="display:none")
+  input#Uvar(type="text" value=currentUser style="display:none")
+  input#PTvar(type="text" )
+  input#UTvar(type="text" )
+  
   name
   // Navigation
   nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
@@ -48,8 +52,18 @@ block content
     .font-weight-bold
       h5 © Sweetpea Travel's
   link(href="./stylesheets/style.css" rel="stylesheet")
-  script(src="./js/index.js")          
-  script. 
+  script(src="./js/index.js")   
+  script.
+    let rawdata= document.getElementById("Pvar").value;
+    let data=JSON.parse(rawdata);
+    console.log("Pdata:",data);  
+    document.getElementById("PTvar").value= data.PkgName;
+    //currentuserdata  
+    let Urawdata= document.getElementById("Uvar").value;
+    let Udata=JSON.parse(Urawdata);
+    console.log("Udata:",Udata);  
+    document.getElementById("UTvar").value= Udata.CustFirstName;   
+  //script. 
       function getQueryVariable(variable){
       var query = window.location.search.substring(1);
       var vars = query.split("&");
@@ -64,7 +78,9 @@ block content
       console.log(name);
       console.log(newname);
       document.getElementById("name").innerText= newname;
-      
+  
+    
+    document.getElementById("Cid").value= data._id;
         
       
       
