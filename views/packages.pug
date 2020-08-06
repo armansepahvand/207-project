@@ -45,9 +45,31 @@ block content
             td= packages.PkgDesc
             td= packages.PkgBasePrice + packages.PkgAgencyCommission
   .container.m-5
-    center
-      img(src=packages.imageurl, alt=packages.PkgDesc)
-  
+    .row
+      .col-lg-6
+        .gallery
+          img(src=packages.imageurl, alt=packages.PkgDesc)
+      .col-lg-6
+        form(action="/test" method="post")
+          .form-group
+            label(for="BookingDate") Booking Date
+            input.form-control#Bdate(type="text" name="BookingDate" placeholder="Booking Date")
+          .form-group
+            label(for="BookingNo") Booking No
+            input.form-control(type="text" name="BookingNo"  placeholder="Booking No")
+          .form-group
+            label(for="TravelerCount") Traveler Count
+            input.form-control(type="number" name="TravelerCount" placeholder="Traveler Count")
+          .form-group
+            label(for="PCustomerId" style="display:none" ) PCustomerId
+            input.form-control#Cid(type="text" placeholder="" name="PCustomerId" style="display:block" )
+            .form-group
+            label(for="PackageName" style="display:none" ) PCustomerId
+            input.form-control#Pname(type="text" placeholder="" name="PackageName" style="display:block" )
+          .form-group
+            label(for="TripTypeId") Trip Type Id
+            input.form-control(type="text" name="TripTypeId" placeholder="Trip Type Id")
+          button.btn.btn-primary(type="submit") Book
   footer.d-flex.justify-content-center.mt-auto
     .font-weight-bold
       h5 © Sweetpea Travel's
@@ -57,12 +79,19 @@ block content
     let rawdata= document.getElementById("Pvar").value;
     let data=JSON.parse(rawdata);
     console.log("Pdata:",data);  
-    document.getElementById("PTvar").value= data.PkgName;
+    document.getElementById("Pname").value= data.PkgName;
     //currentuserdata  
     let Urawdata= document.getElementById("Uvar").value;
     let Udata=JSON.parse(Urawdata);
     console.log("Udata:",Udata);  
-    document.getElementById("UTvar").value= Udata.CustFirstName;   
+    document.getElementById("Cid").value= Udata._id;   
+    var d = new Date();
+    var dd = String(d.getDate()).padStart(2, '0');
+    var mm = String(d.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = d.getFullYear();
+
+    d = mm + '/' + dd + '/' + yyyy;
+    document.getElementById("Bdate").value= d;
   //script. 
       function getQueryVariable(variable){
       var query = window.location.search.substring(1);
