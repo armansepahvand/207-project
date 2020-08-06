@@ -17,9 +17,9 @@ router.post('/', (req, res, next) => {
   });
 });
 
-/*Basel's work on User Update function
-//router.put('/logedinuser', currentUser, function(req,res,next){
-  User.findById(req.customer._id).then(function(customer){
+//Basel's work on User Update function
+router.put('/logedinuser', currentUser, function(req,res,next){
+  Customers.findById(req.customer._id).then(function(customer){
       if(!currentUser){return res.sendStatus(401);}
       if(typeof req.body.customer.CustFirstName !== 'undefined'){
           customer.CustFirstName = req.body.customer.CustFirstName;
@@ -50,6 +50,6 @@ router.post('/', (req, res, next) => {
           return res.json({customer: customer.toAuthJSON()});
       });
   }).catch(next);
-});*/
+});
 
 module.exports = router;
