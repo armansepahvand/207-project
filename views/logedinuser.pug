@@ -29,13 +29,13 @@ html(lang="en")
             li.nav-item
               a.nav-link(href="contact") Contact
             li.nav-item
-              a.nav-link.active(href="register") Register
+              a.nav-link(href="register") Register
+            if currentUser
+              li.nav-item
+                a.nav-link.active(href='logedinuser') Profile
 
     .container
         // profile page
-        link#bootstrap-css(href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet")
-        script(src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
-        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         // ---- Include the above in your HEAD tag --------
         .container.emp-profile
           form(method="post")
@@ -46,6 +46,13 @@ html(lang="en")
                   .file.btn.btn-lg.btn-primary
                     | Change Photo
                     input(type="file" name="file")
+              .col-md-5
+                  .list-group
+                    a.list-group-item.list-group-item-action(href="#") Bokkes Packages   
+                    a.list-group-item.list-group-item-action(href="#" style="padding-right:0px;padding-left:10px")= "Second item:     "
+                      button.btn.btn-outline-danger.float-right(type="button")= "cancel booking"
+                    //a.list-group-item.list-group-item-action(href="#") Third item
+
 
 .container
   #error
