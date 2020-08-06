@@ -1,3 +1,4 @@
+doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
@@ -29,13 +30,7 @@ html(lang="en")
               a.nav-link(href="contact") Contact
             li.nav-item
               a.nav-link.active(href="register") Register
-    .container
-      form(name="myForm" action="/registerdata" onsubmit="return validateForm()" method="GET")
-        // profile page
-        link#bootstrap-css(href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet")
-        script(src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
-        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        // ---- Include the above in your HEAD tag --------
+
     .container
       form(name="myForm" action="/registerdata" onsubmit="return validateForm()" method="GET")
         // profile page
@@ -55,7 +50,7 @@ html(lang="en")
 
 .container
   #error
-  form#form.form-inline(name='f' method='GET' action='/register')
+  form(name='f' method='GET' action='/register')
     label(for='userId') User Id: 
     input#userId.form-control(type='text' required='' name='userId' value='currentUser._id' placeholder='userId')
     label(for='username') User Name: 
@@ -66,28 +61,27 @@ html(lang="en")
     input#CustLastName.form-control(type='text' required='' name='CustLastName' placeholder='Last Name')
     label(for='fname') Address: 
     input#Address.form-control(type='text' name='CustAddress' placeholder='Address')
-
     label(for='city') City: 
-input#city.form-control(type='text' name='CustCity' placeholder='City')
-label(for='province') Province: 
-input#province.form-control(type='text' name='province' placeholder='Province')
-label(for='home phone') Home phone: 
-input#CustHomePhone.form-control(type='text' name='CustHomePhone' placeholder='home phone')
-label(for='business phoone') Business Phone: 
-input#CustBusPhone.form-control(type='text' name='CustBusPhone' placeholder='business phone')
-label(for='password') Password: 
-input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
-label(for='password') Confirm Password: 
-input#CPassword.form-control(type='password' name='cpass' placeholder='Confirm Password')
-input(type='button' name='btn' value='checkpassword()')
-button#saveData.btn.btn-warning.btn-block(style='display:none') Save
+    input#city.form-control(type='text' name='CustCity' placeholder='City')
+    label(for='province') Province: 
+    input#province.form-control(type='text' name='province' placeholder='Province')
+    label(for='home phone') Home phone: 
+    input#CustHomePhone.form-control(type='text' name='CustHomePhone' placeholder='home phone')
+    label(for='business phoone') Business Phone: 
+    input#CustBusPhone.form-control(type='text' name='CustBusPhone' placeholder='business phone')
+    label(for='password') Password: 
+    input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
+    label(for='password') Confirm Password: 
+    input#CPassword.form-control(type='password' name='cpass' placeholder='Confirm Password')
+    input(type='button' name='btn' value='checkpassword()')
+    button#saveData.btn.btn-warning.btn-block(style='display:none') Save
 
-.offset-4.col-8
-  button.btn.btn-primary(name='submit' type='submit') Update My Profile
+            .offset-4.col-8
+                 button.btn.btn-primary(name='submit' type='submit') Update My Profile
 
-  
+
     // Footer
-    footer
+footer
       .col-12
         .font-weight-bold
           h5 © Sweetpea Travel's
