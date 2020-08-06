@@ -51,8 +51,7 @@ block content
       #quoteDisplay.font-italic
       br
       button.button(onclick='newQuote()') Click Me for a Quote!
-  // Fixed Image
-  // <div class="fixed-bg"></div>
+  
   // Vacay Packages
   .text-center
     h1.display-3 Vacation Packages
@@ -61,14 +60,14 @@ block content
   .container
     .responsive
       .gallery
-        a(href='./packages?name=Caribbean+New+Year')
+        a(href="./packages?name=Arizona+Grand+Escape")
           img.img-thumbnail(src='/images/tarizonarocks.jpg' alt='Arizona' title='Arizona')
         .desc
           | The beauty of Arizona is not limited to the Grand Canyon
           | and golfing, there is so much more to uncover. Discover all the unique experiences now.
     .responsive
       .gallery
-        a(href='./packages')
+        a(href='./packages?name=On+Cloud+Wine')
           img.img-thumbnail(src='/images/winetour.jpg' alt='Wine Tour' title='Napa Valley Wine Tour')
         .desc
           | Red, White, or a Ros&eacute;?
@@ -77,14 +76,14 @@ block content
           |                     is a group of you; a Napa Valley Wine Tour is for everyone.
     .responsive
       .gallery
-        a(href='./packages')
+        a(href='./packages?name=Keep+Calm+and+Wellness+On')
           img.img-thumbnail(src='/images/fishing.jpg' alt='retreat' title='Rockies Retreat')
         .desc
           | Come relax at Wellness Lodge for a week, or more. Yoga, meditation, horseback
           | riding, hiking, and so much more, await you in the Rockies.
     .responsive
       .gallery
-        a(href='./packages')
+        a(href='./packages?name=Adventours+in+OZ')
           img.img-thumbnail(src='/images/tree.jpg' alt='Australia' title='Australia')
         .desc
           | Not only does it match every taste, budget, age, or
@@ -97,11 +96,11 @@ block content
       .col-12
         h2 Connect With Us
       .col-12.social.padding
-        a(href='#')
+        a(href='www.facebook.com')
           i.fab.fa-facebook
-        a(href='#')
+        a(href='www.twitter.com')
           i.fab.fa-twitter
-        a(href='#')
+        a(href='www.instagram.com')
           i.fab.fa-instagram
   // Footer
   footer
@@ -126,7 +125,9 @@ block content
             p Sunday and Holidays: Closed
         .col-12
           h5(font-weight='bold') &copy; Sweetpea Travel&apos;s//
-
+  script.
+    let data= currentUser;
+    console.log(data);
 
   h2
   | Go to our 

@@ -15,7 +15,8 @@ const PackageSchema = new mongoose.Schema({
     PkgEndDate: Date,
     PkgDesc: String,
     PkgBasePrice: Number,
-    PkgAgencyCommission: Number
+    PkgAgencyCommission: Number,
+    imageurl: String
     // more fields defined below
 });
 // Creating the Agency collection Model

@@ -10,6 +10,7 @@ var aboutRouter = require('./routes/about');
 var contactRouter = require('./routes/contact');
 var registerRouter = require('./routes/register');
 var packagesRouter = require('./routes/packages');
+var BookingRouter = require('./routes/test');
 var logedinuserRouter = require('./routes/logedinuser');
 const configPassport = require('./configure_passport');
 
@@ -36,6 +37,7 @@ app.use('/contact', contactRouter);
 app.use('/register', registerRouter);
 app.use('/packages', packagesRouter);
 app.use('/logedinuser', logedinuserRouter);
+app.use('/test', BookingRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

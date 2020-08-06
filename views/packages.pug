@@ -21,19 +21,17 @@ block content
             a.nav-link(href="contact") Contact
           li.nav-item
             a.nav-link(href="register") Register
-  .col-12
-    h5(font-weight="bold") © Sweetpea Travel's
-    p#name
+  
           
   .container.m-5
     table.table.table-hover
       thead
         tr
-          td PkgName
-          td PkgStartDate
-          td PkgEndDate
-          td PkgDesc
-          td PkgPrice
+          td Package Name
+          td Package Start Date
+          td Package End Date
+          td Package Description
+          td Package Price
           
       tbody
           tr.table-info
@@ -42,6 +40,13 @@ block content
             td= packages.PkgEndDate
             td= packages.PkgDesc
             td= packages.PkgBasePrice + packages.PkgAgencyCommission
+  .container.m-5
+    center
+      img(src=packages.imageurl, alt=packages.PkgDesc)
+  
+  footer.d-flex.justify-content-center.mt-auto
+    .font-weight-bold
+      h5 © Sweetpea Travel's
   link(href="./stylesheets/style.css" rel="stylesheet")
   script(src="./js/index.js")          
   script. 
