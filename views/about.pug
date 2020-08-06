@@ -18,6 +18,9 @@ block content
             a.nav-link(href="contact") Contact
           li.nav-item
             a.nav-link(href="register") Register
+          if currentUser
+            li.nav-item
+              a.nav-link(href='logedinuser') Profile
   // About
   .container
     .about
