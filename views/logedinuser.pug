@@ -1,84 +1,108 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    title User Profile
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
-    script(src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
-    link(href="./stylesheets/registerstylesheet.css" link="" rel="stylesheet")
-    script(src="js/register.js")
-    link(href="./stylesheets/userprofile.css" rel="stylesheet")
-  body
-    nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
-      .container
-        a.navbar-brand(href="/")
-          img(src="images/logogry.png" alt="logo" title="Logo")
-        h2 Sweetpea Travel's
-        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarResponsive")
-          span.navbar-toggler-icon
-        #navbarResponsive.collapse.navbar-collapse
-          ul.navbar-nav.ml-auto
-            li.nav-item
-              a.nav-link(href="/") Home
-            li.nav-item
-              a.nav-link(href="about") About
-            li.nav-item
-              a.nav-link(href="contact") Contact
-            li.nav-item
-              a.nav-link.active(href="register") Register
+extends layout
 
+block content
+  input#Uvar(type="text" value=currentUser style="display:none")
+  nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
     .container
-        // profile page
-        link#bootstrap-css(href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet")
-        script(src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
-        script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-        // ---- Include the above in your HEAD tag --------
-        .container.emp-profile
-          form(method="post")
-            .row
-              .col-md-4
-                .profile-img
-                  img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="")
-                  .file.btn.btn-lg.btn-primary
-                    | Change Photo
-                    input(type="file" name="file")
+      a.navbar-brand(href="/")
+        img(src="images/logogry.png" alt="logo" title="Logo")
+      h2 Sweetpea Travel's
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarResponsive")
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href="/") Home
+          li.nav-item
+            a.nav-link(href="about") About
+          li.nav-item
+            a.nav-link(href="contact") Contact
+          li.nav-item
+            a.nav-link(href="register") Register
+          if currentUser
+            li.nav-item
+              a.nav-link.active(href='logedinuser') Profile
 
-.container
-  #error
-  form(name='f' method='POST' action='/updateuser')
-    label(for='CustUsername') User Id: 
-    input#CustUsername.form-control(type='text' required='' name='CustUsername' value=currentUser.CustUsername placeholder='userId')
-    //label(for='username') User Name: 
-    //input#username.form-control(type='text' required='' name='username' placeholder='Username')
-    label(for='CustFirstName') First Name: 
-    input#CustFirstName.form-control(type='text' required='' name='CustFirstName' value=currentUser.CustFirstName placeholder='First Name')
-    label(for='CustLastName') Last Name: 
-    input#CustLastName.form-control(type='text' required='' name='CustLastName' value=currentUser.CustLastName placeholder='Last Name')
-    label(for='CustAddress') Address: 
-    input#CustAddress.form-control(type='text' name='CustAddress' value=currentUser.CustAddress placeholder='Address')
-    label(for='CustCity') City: 
-    input#CustCity.form-control(type='text' name='CustCity' value=currentUser.CustCity placeholder='City')
-    label(for='CustProv') Province: 
-    input#CustProv.form-control(type='text' name='CustProv' value=currentUser.CustProv placeholder='Province')
-    label(for='CustPhone') Home phone: 
-    input#CustPhone.form-control(type='text' name='CustPhone' value=currentUser.CustPhone placeholder='home phone')
-    label(for='password') Password: 
-    input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
-    label(for='password') Confirm Password: 
-    input#CPassword.form-control(type='password' name='cpass' placeholder='Confirm Password')
-    //input(type='button' name='btn' value='checkpassword()')
-    //button#saveData.btn.btn-warning.btn-block(style='display:none') Save
+  .container
+      // profile page
+      // ---- Include the above in your HEAD tag --------
+      .container.emp-profile
+        form(method="post")
+          .row
+            .col-md-4
+              .profile-img
+                img(src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="")
+                .file.btn.btn-lg.btn-primary
+                  | Change Photo
+                  input(type="file" name="file")
+            .col-md-5
+                .list-group
+                  li.list-group-item.list-group-item-action Booked Packages   
+                  li.list-group-item.list-group-item-action= bookings[1].PackageName
+                  button.btn.btn-outline-danger.float-right#cancel(type="button") cancel booking
+                  //a.list-group-item.list-group-item-action(href="#") Third item
 
-    .offset-4.col-8
-    button.btn.btn-primary(name='submit' type='submit') Update My Profile
+
+  .container
+    #error
+    form(name='f' method='PUT' action='/updateuser')
+      //label(for='CustUsername') User Id: 
+      //input#CustUsername.form-control(type='text' required='' name='CustUsername' value=currentUser.CustUsername placeholder='userId')
+      //label(for='username') User Name: 
+      //input#username.form-control(type='text' required='' name='username' placeholder='Username')
+      label(for='CustFirstName') First Name: 
+      input#CustFirstName.form-control(type='text' required='' name='CustFirstName' value=currentUser.CustFirstName placeholder='First Name')
+      label(for='CustLastName') Last Name: 
+      input#CustLastName.form-control(type='text' required='' name='CustLastName' value=currentUser.CustLastName placeholder='Last Name')
+      label(for='CustAddress') Address: 
+      input#CustAddress.form-control(type='text' name='CustAddress' value=currentUser.CustAddress placeholder='Address')
+      label(for='CustCity') City: 
+      input#CustCity.form-control(type='text' name='CustCity' value=currentUser.CustCity placeholder='City')
+      label(for='CustProv') Province: 
+      input#CustProv.form-control(type='text' name='CustProv' value=currentUser.CustProv placeholder='Province')
+      label(for='CustHomePhone') Home phone: 
+      input#CustHomePhone.form-control(type='text' name='CustHomePhone' value=currentUser.CustHomePhone placeholder='home phone')
+      label(for='CustBusPhone') Business Phone: 
+      input#CustBusPhone.form-control(type='text' name='CustBusPhone' value=currentUser.CustBusPhone placeholder='business phone')
+      label(for='password') Password: 
+      input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
+      label(for='password') Confirm Password: 
+      input#CPassword.form-control(type='password' name='cpass' placeholder='Confirm Password')
+      //input(type='button' name='btn' value='checkpassword()')
+      //button#saveData.btn.btn-warning.btn-block(style='display:none') Save
+
+      .offset-4.col-8
+      button.btn.btn-primary(name='submit' type='submit') Update My Profile
 
 
     // Footer
-footer
+  footer
       .col-12
         .font-weight-bold
           h5 © Sweetpea Travel's
+  link(href="./stylesheets/registerstylesheet.css" link="" rel="stylesheet")
+  script(src="js/register.js")
+  link(href="./stylesheets/userprofile.css" rel="stylesheet")
+  script.
+    
+    
+    //- let Urawdata= document.getElementById("Uvar").value;
+    //- let Udata=JSON.parse(Urawdata);
+    //- let Cid=Udata._id
+    //- console.log("Customer Id: ", Cid);
+    //- $(document).ready(function(){
+    //- $("#cancel").click(function(){
+    //-   $.ajax({
+    //-   Method: "POST",
+    //-   url: "/logedinuser",
+    //-   data: {CustID: Cid},
+    //-   success: function(){
+    //-     alert("post successful")
+    //-   },
+    //-   error: function(){
+    //-     alert("error sending")
+    //-   }
+      
+    //- });
+    //- });
+    //- });

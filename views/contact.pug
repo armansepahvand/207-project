@@ -20,6 +20,9 @@ block content
             a.nav-link.active(href="contact") Contact
           li.nav-item
             a.nav-link(href="register") Register
+          if currentUser
+            li.nav-item
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
   .jumbotron.py-4
     div(style="text-align:center")
       h2 We would love to hear from you

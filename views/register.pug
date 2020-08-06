@@ -19,6 +19,9 @@ block content
             a.nav-link(href="contact") Contact
           li.nav-item
             a.nav-link.active(href="register") Register
+          if currentUser
+            li.nav-item
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
   .container
     .gallery
       img.float-right(src="images/fishingcircle.jpg" alt="Gone Fishing")
