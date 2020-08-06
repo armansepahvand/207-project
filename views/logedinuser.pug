@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  input#Uvar(type="text" value=currentUser style="display:none")
+  input#Uvar(type="text" value=bookings style="display:none")
   nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
     .container
       a.navbar-brand(href="/")
@@ -37,9 +37,10 @@ block content
                   input(type="file" name="file")
             .col-md-5
                 .list-group
-                  li.list-group-item.list-group-item-action Booked Packages   
-                  li.list-group-item.list-group-item-action= bookings[1].PackageName
-                  button.btn.btn-outline-danger.float-right#cancel(type="button") cancel booking
+                  li.list-group-item.list-group-item-action.bg-danger.text-white Booked Packages   
+                .list-group#listgen
+                  //li.list-group-item.list-group-item-action= bookings[1].PackageName
+                      button.btn.btn-outline-danger.float-right#cancel(type="button") cancel booking
                   //a.list-group-item.list-group-item-action(href="#") Third item
 
 
@@ -84,7 +85,19 @@ block content
   script(src="js/register.js")
   link(href="./stylesheets/userprofile.css" rel="stylesheet")
   script.
+    let BookingRawdata= document.getElementById("Uvar").value;
+    let Bdata=JSON.parse(BookingRawdata);
+    function ligenerator(){
     
+      for(i=0; i<=(Bdata.length); i++){ 
+        let liElement= document.createElement("li");
+        liElement.setAttribute("class", "list-group-item list-group-item-action");
+        liElement.innerHTML=(Bdata[i].PackageName +"_____"+ "bookingNo:"+ Bdata[i].BookingNo )
+        let x=document.getElementById("listgen");
+        x.appendChild(liElement);
+      }
+    }
+    document.onload=ligenerator();
     
     //- let Urawdata= document.getElementById("Uvar").value;
     //- let Udata=JSON.parse(Urawdata);
