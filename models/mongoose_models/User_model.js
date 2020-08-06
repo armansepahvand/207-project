@@ -5,7 +5,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true
     },
     CustLastName: {
         type: String,
@@ -21,7 +20,8 @@ const UserSchema = new mongoose.Schema({
     CustUsername: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        unique: true
     },
 
     CustAddress: String,
