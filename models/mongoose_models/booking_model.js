@@ -11,6 +11,7 @@ const BookingSchema = new mongoose.Schema({
     BookingNo: String,
     TravelerCount: Number,
     PCustomerId: String,
+    PkgName: String,
     TripTypeId: String
    
     // more fields defined below

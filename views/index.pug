@@ -19,6 +19,10 @@ block content
             a.nav-link(href='contact') Contact
           li.nav-item
             a.nav-link(href='register') Register
+          if currentUser
+            li.nav-item
+              a.nav-link(href='logedinuser') Profile
+
   br
   // - Carousel
   .container-fluid
@@ -57,18 +61,18 @@ block content
     h1.display-3 Vacation Packages
   br
   br
-  .container
+  .container.col-6
     .responsive
       .gallery
         a(href="./packages?name=Arizona+Grand+Escape")
-          img.img-thumbnail(src='/images/tarizonarocks.jpg' alt='Arizona' title='Arizona')
+          img.img-thumbnail(src='/images/tarizonarocks.jpg' alt='Arizona' title="Arizona's Grand Escape")
         .desc
           | The beauty of Arizona is not limited to the Grand Canyon
           | and golfing, there is so much more to uncover. Discover all the unique experiences now.
     .responsive
       .gallery
         a(href='./packages?name=On+Cloud+Wine')
-          img.img-thumbnail(src='/images/winetour.jpg' alt='Wine Tour' title='Napa Valley Wine Tour')
+          img.img-thumbnail(src='/images/winetour.jpg' alt='Wine Tour' title='On Cloud Wine')
         .desc
           | Red, White, or a Ros&eacute;?
           br
@@ -77,14 +81,14 @@ block content
     .responsive
       .gallery
         a(href='./packages?name=Keep+Calm+and+Wellness+On')
-          img.img-thumbnail(src='/images/fishing.jpg' alt='retreat' title='Rockies Retreat')
+          img.img-thumbnail(src='/images/fishing.jpg' alt='retreat' title='Keep Calm & Wellness On')
         .desc
           | Come relax at Wellness Lodge for a week, or more. Yoga, meditation, horseback
           | riding, hiking, and so much more, await you in the Rockies.
     .responsive
       .gallery
         a(href='./packages?name=Adventours+in+OZ')
-          img.img-thumbnail(src='/images/tree.jpg' alt='Australia' title='Australia')
+          img.img-thumbnail(src='/images/tree.jpg' alt='Australia' title='Adventours in OZ')
         .desc
           | Not only does it match every taste, budget, age, or
           | interests, but Australia also delivers unique experiences
@@ -96,11 +100,11 @@ block content
       .col-12
         h2 Connect With Us
       .col-12.social.padding
-        a(href='www.facebook.com')
+        a(href='https://www.facebook.com/')
           i.fab.fa-facebook
-        a(href='www.twitter.com')
+        a(href='https://twitter.com/')
           i.fab.fa-twitter
-        a(href='www.instagram.com')
+        a(href='https://www.instagram.com/?hl=en')
           i.fab.fa-instagram
   // Footer
   footer
@@ -129,9 +133,5 @@ block content
     let data= currentUser;
     console.log(data);
 
-  h2
-  | Go to our 
-  a(href='/private') Private
-  |  page after you login
   script(src='/javascripts/index.js')
   link(href='/stylesheets/style.css' rel='stylesheet')
