@@ -46,8 +46,8 @@ module.exports = (app) => {
     app.post( // User Login API
         "/log-in",
         passport.authenticate("local", {
-            successRedirect: "/",
-            failureRedirect: "/",
+            successRedirect: 'back',
+            failureRedirect: 'back',
             failureFlash: true
         })
     );

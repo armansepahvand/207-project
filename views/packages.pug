@@ -71,7 +71,10 @@ block content
           .form-group
             label(for="TripTypeId") Trip Type Id
             input.form-control#Tid(type="text" name="TripTypeId" placeholder="Trip Type Id")
-          button.btn.btn-primary(type="submit") Book
+          if currentUser
+            button.btn.btn-primary(type="submit") Book
+          if !currentUser 
+            h3 Please login to book this package!
   footer.d-flex.justify-content-center.mt-auto
     .font-weight-bold
       h5 © Sweetpea Travel's
