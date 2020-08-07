@@ -10,7 +10,8 @@ exports.getContactData = (agencyId, callBack) => {
         Agency.find({}, callBack);  // Get all agencies
     else
         Agent.find({ AgencyId: agencyId }, callBack);   // Get Agents for the given agencyId
-}
+
+      }
 
 // Creates a new user
 exports.createUser = function (user, callBack) {
