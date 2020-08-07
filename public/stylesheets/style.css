@@ -196,7 +196,6 @@ footer a {
 }
 
 /*Media Queries*/
-
 /* Extra small devices (phones, 520px and down) */
 @media only screen and (max-width: 600px) {
   .responsive {
@@ -208,7 +207,6 @@ footer a {
     height: 100%;
   }
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .responsive {
@@ -220,7 +218,6 @@ footer a {
     height: 100%;
   }
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 750px) {
   .carousel-caption h1 {
@@ -236,9 +233,7 @@ footer a {
     width: 50%;
     margin: 6px 0;
   }
-  
 }
-
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .carousel-caption h1 {
@@ -250,9 +245,7 @@ footer a {
   .carousel-caption h6 {
     font-size: 1.8rem;
   }
-  
-} 
-
+}
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .carousel-caption h1 {
