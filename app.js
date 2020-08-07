@@ -1,9 +1,12 @@
+// Created by all team members
+// Requiring modules
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Requiring routers for page paths
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
@@ -30,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 configPassport(app);
 // ************* End Authontiction *****
 
+// Calling routers
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);

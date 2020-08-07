@@ -1,6 +1,9 @@
+// Created by Basel
 var express = require('express');
 var router = express.Router();
 var data = require('../models/mongoose_data');
+
+/* GET home page. */
 router.get('/', function(req, res, next) {
   let id=req.query.id;
   console.log(id);
@@ -10,13 +13,9 @@ router.get('/', function(req, res, next) {
       console.log(bookings)
       res.render('logedinuser',{ bookings: bookings });
       })
-});  /* GET home page. */
+});
 
-
-// router.get('/', function (req, res, next) {
-//   res.render('logedinuser', { title: "express" });
-// });
-
+// Update information from form and sends to success message before sending to index
 router.post('/', function (req, res, next) {
   console.log(req.user);
   req.body._id=req.user._id;
@@ -25,7 +24,6 @@ router.post('/', function (req, res, next) {
      res.send("<h2 style='margin:50px;text-align: center;'>" +
       "Update was Successful</h2>" +
      "<script> setTimeout(()=>window.location='/', 2000)</script>");
-    //res.render('logedinuser', { title: 'Express' });
   });
   
 });

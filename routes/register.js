@@ -1,3 +1,4 @@
+// Created by Arman
 var express = require('express');
 var router = express.Router();
 var data = require('../models/mongoose_data');
@@ -8,7 +9,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', (req, res, next) => {
-  //console.log(JSON.stringify(req.body));
   data.createUser(req.body, (err, message) => {
     if (err) return res.status(500).send('Error ' + err);
     res.send("<h2 style='margin:50px;text-align: center;'>" +

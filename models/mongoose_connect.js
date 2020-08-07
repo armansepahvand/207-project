@@ -1,3 +1,4 @@
+// Created by Crystal, edited by other members
 const mongoose = require('mongoose');
 //const url = "mongodb://localhost:27017/travelexperts";
 const url = "mongodb+srv://ThunderstormPantherBearAdmin:ThunderstormPantherBear@thunderstormpantherbear.wmwvd.azure.mongodb.net/travelexperts?retryWrites=true&w=majority"

@@ -1,3 +1,4 @@
+// Created initially in html by Crystal, translated to pug by Arman and Duncan
 extends layout
 
 block content
@@ -63,8 +64,6 @@ block content
             td Last Name
             td Contact Number
             td Email
-            //td Position
-            //td Agency
           tbody
            each row in agents
             tr.table-info
@@ -74,8 +73,6 @@ block content
             td= row.AgtLastName
             td= row.AgtBusPhone
             td= row.AgtEmail
-            //td= row.AgtPosition
-            //td= row.AgencyId
   section#contact.contact
     .container.my-2
       .row
@@ -372,6 +369,7 @@ block content
   link(href="./stylesheets/boxicons/css/boxicons.min.css" rel="stylesheet")
 
   script.
+    // Function that validates form fields
     myFunction = function () {
     var first = document.getElementById("fname").value;
     var second = document.getElementById("lname").value;
@@ -388,16 +386,7 @@ block content
     });
 
   script.
+    // Function that changes attribute of agentstable
     let element = document.getElementById('agentstable');
     document.getElementByClass('agentsbutton').onclick = function() {element.setAttribute.style.display='block'}
     
-  
-  //script(language='javascript').
-    function showMenu(elmnt)
-    {
-    document.getElementById(elmnt).style.visibility="visible";
-    }
-    function hideMenu(elmnt)
-    {
-    document.getElementById(elmnt).style.visibility="hidden";
-    }

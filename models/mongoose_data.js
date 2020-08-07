@@ -1,3 +1,4 @@
+// Created by all members (various functions)
 const Agency = require("./mongoose_models/Agency_model");
 const Agent = require("./mongoose_models/Agent_model");
 const Customer = require("./mongoose_models/User_model");
@@ -22,7 +23,6 @@ exports.createUser = function (user, callBack) {
     const myuser = new Customer(user); // User Mongoose Model
     myuser.save(function (err) {
       // Saves the user to the DB
-      //if (err) return console.error(err);
       callBack(err, "Ok");
     });
   });
@@ -55,9 +55,7 @@ exports.updateUser = function (user, callBack) {
 
 
     if (typeof user.CustPassword !== 'undefined') {
-      // user.setPassword(req.body.user.password);
       customer.CustPassword = user.CustPassword;
-      //user.CustPassword = customer.CustPassword;
       bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
 
         customer.CustPassword = hashedPassword;
@@ -67,23 +65,12 @@ exports.updateUser = function (user, callBack) {
         console.log(hashedPassword);
         console.log("this is the customer", customer.CustPassword)
         console.log("this is the user", user.CustPassword)
-
-
-        //callBack(err, "Ok");
-
-
         console.log("we are in bcrypt user", customer);
         customer.save().then(function () {
 
           callBack(null, "Update Successful");
 
         });
-
-        //customer.CustPassword = user.CustPassword
-        //bcrypt.hash( customer.CustPassword, 10, (err, hashedPassword) => {
-        //user.CustPassword = hashedPassword;
-        //customer.CustPassword = hashedPassword;
-
       })
     }
     else {
@@ -102,30 +89,14 @@ exports.createBooking = function (booking, callBack) {
   const mybooking = new Booking(booking); // User Mongoose Model
   mybooking.save(function (err) {
     // Saves the user to the DB
-    //if (err) return console.error(err);
     callBack(err, "Ok");
   });
 };
 
-/*// Updates Customer/user information
-exports.updateUser = function (user, callBack) {
-    bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
-        user.CustPassword = hashedPassword;
-        console.log(hashedPassword);
-           
-    const myuser =   // User Mongoose Model
-    myuser.save(function (err) {    // Saves the user to the DB
-        //if (err) return console.error(err);
-        callBack(err, 'Ok');
-         })
-        })
-}*/
 
 // Get the use using the userId
 exports.getUser = function (userId, callBack) {
   Customer.findById(userId, (err, data) => {
-    //console.log('In getUser')
-    //console.log(err, data);
     callBack(err, data); // Send the results back
   });
 };
@@ -133,23 +104,17 @@ exports.getUser = function (userId, callBack) {
 // Get the use using the userId
 exports.getUserName = function (Username, callBack) {
   Customer.findOne({ CustUsername: username }, (err, data) => {
-    //console.log('In getUser')
-    //console.log(err, data);
     callBack(err, data); // Send the results back
   });
 };
 exports.getPackage = function (PkgName, callBack) {
   Package.findOne({ PkgName }, (err, data) => {
-    //console.log('In getUser')
-    //console.log(err, data);
     callBack(err, data); // Send the results back
   });
 };
 
 exports.getBooking = function (id, callBack) {
   Booking.find({ PCustomerId: id }, (err, data) => {
-    //console.log('In getUser')
-    //console.log(err, data);
     callBack(err, data); // Send the results back
   });
 };

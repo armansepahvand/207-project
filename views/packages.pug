@@ -1,3 +1,4 @@
+// Created initially in html by Crystal, translated to pug by Arman and Sky
 extends layout
 
 block content
@@ -83,21 +84,23 @@ block content
 
   
   script.
+    // Getting package and user data and passing them to JSON objects
     let rawdata= document.getElementById("Pvar").value;
     let data=JSON.parse(rawdata);
     console.log("Pdata:",data);  
     document.getElementById("Pname").value= data.PkgName;
-    //currentuserdata  
     let Urawdata= document.getElementById("Uvar").value;
     let Udata=JSON.parse(Urawdata);
     console.log("Udata:",Udata);  
     document.getElementById("Cid").value= Udata._id;   
+    // Getting todays date
     var d = new Date();
     var dd = String(d.getDate()).padStart(2, '0');
     var mm = String(d.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = d.getFullYear();
     d = mm + '/' + dd + '/' + yyyy;
     document.getElementById("Bdate").value= d;
+    // Function to create a random string for the booking number
     function makeid(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -107,6 +110,7 @@ block content
     }
     return result;
     }  
+    // Function to generate a random string for the trip ID
     function makeTid(length) {
     var result           = '';
     var characters       = 'ABCDEF';

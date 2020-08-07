@@ -1,3 +1,4 @@
+// Created by Arman
 const mongoose = require('../mongoose_connect');
 
 // Creating the Agency Schema
@@ -14,7 +15,6 @@ const BookingSchema = new mongoose.Schema({
     PackageName: String,
     TripTypeId: String
    
-    // more fields defined below
 });
 // Creating the Agency collection Model
 module.exports = mongoose.model('Booking', BookingSchema);

@@ -1,3 +1,4 @@
+// Created by Duncan, edited by all team members as well
 const mongoose = require('../mongoose_connect');
 // Creating the Agency Schema
 const AgencySchema = new mongoose.Schema({
@@ -20,7 +21,7 @@ const AgencySchema = new mongoose.Schema({
     AgncyCountry: String,
     AgncyPhone: String,
     AgncyFax: String
-    // more fields defined below
+    
 });
 // Creating the Agency collection Model
 module.exports = mongoose.model('Agency', AgencySchema);

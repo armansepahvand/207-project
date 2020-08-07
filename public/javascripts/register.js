@@ -1,3 +1,4 @@
+// Made by Crystal, validates registration form fields
 var firstName = document.forms['myForm']['CustFirstName'];
 var lastName = document.forms['myForm']['CustLastName'];
 var phoneNumber = document.forms['myForm']['CustHomePhone'];

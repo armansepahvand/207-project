@@ -1,3 +1,4 @@
+// Created by Basel, edited by other team members
 const mongoose = require('../mongoose_connect');
 // Creating the User Schema
 const UserSchema = new mongoose.Schema({
@@ -29,7 +30,7 @@ const UserSchema = new mongoose.Schema({
     CustProv: String,
     CustPostal: String,
     CustPhone: String
-    // more fields defined below
+
 });
 // Creating the User collection Model
 module.exports = mongoose.model('Customer', UserSchema);

@@ -1,3 +1,4 @@
+// Created by Arman, edited by other team members
 const mongoose = require('../mongoose_connect');
 // Creating the Agency Schema
 const PackageSchema = new mongoose.Schema({
@@ -17,7 +18,7 @@ const PackageSchema = new mongoose.Schema({
     PkgBasePrice: Number,
     PkgAgencyCommission: Number,
     imageurl: String
-    // more fields defined below
+    
 });
 // Creating the Agency collection Model
 module.exports = mongoose.model('Packages', PackageSchema);

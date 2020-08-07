@@ -1,3 +1,4 @@
+// Created by Crystal
 var quotes = [
   "This is the journey of your life. Don\’t try to explain it to others because only you can see it.  – Nitin Namdeo",
 "Some journeys can be only traveled alone.  – Ken Poirot",

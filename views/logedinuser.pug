@@ -1,3 +1,4 @@
+// Created initially in html by Crystal, translated to pug by Arman and Basel
 extends layout
 
 block content
@@ -39,18 +40,12 @@ block content
                 .list-group
                   li.list-group-item.list-group-item-action.bg-danger.text-white Booked Packages   
                 .list-group#listgen
-                  //li.list-group-item.list-group-item-action= bookings[1].PackageName
-                      button.btn.btn-outline-danger.float-right#cancel(type="button") cancel booking
-                  //a.list-group-item.list-group-item-action(href="#") Third item
-
 
   .container
     #error
     form(name='f' method='POST' action='/logedinuser')
       label(for='CustUsername') User Id: 
       input#CustUsername.form-control(type='text' required='' name='CustUsername' value=currentUser.CustUsername placeholder='userId')
-      //label(for='username') User Name: 
-      //input#username.form-control(type='text' required='' name='username' placeholder='Username')
       label(for='CustFirstName') First Name: 
       input#CustFirstName.form-control(type='text' required='' name='CustFirstName' value=currentUser.CustFirstName placeholder='First Name')
       label(for='CustLastName') Last Name: 
@@ -69,9 +64,6 @@ block content
       input#CustPassword.form-control(type='text' name='CustPassword' placeholder='Current Password')
       label(for='password') Confirm Password: 
       input#CPassword.form-control(type='password' name='cpass' placeholder='Confirm Password')
-      //input(type='button' name='btn' value='checkpassword()')
-      //button#saveData.btn.btn-warning.btn-block(style='display:none') Save
-
       .offset-4.col-8
       button.btn.btn-primary(name='submit' type='submit') Update My Profile
 
@@ -85,8 +77,10 @@ block content
   script(src="js/register.js")
   link(href="./stylesheets/userprofile.css" rel="stylesheet")
   script.
+    // Get user data and passes it to a JSON object
     let BookingRawdata= document.getElementById("Uvar").value;
     let Bdata=JSON.parse(BookingRawdata);
+    // Function to create a list of booked items for customer
     function ligenerator(){
     
       for(i=0; i<=(Bdata.length); i++){ 
@@ -98,24 +92,3 @@ block content
       }
     }
     document.onload=ligenerator();
-    
-    //- let Urawdata= document.getElementById("Uvar").value;
-    //- let Udata=JSON.parse(Urawdata);
-    //- let Cid=Udata._id
-    //- console.log("Customer Id: ", Cid);
-    //- $(document).ready(function(){
-    //- $("#cancel").click(function(){
-    //-   $.ajax({
-    //-   Method: "POST",
-    //-   url: "/logedinuser",
-    //-   data: {CustID: Cid},
-    //-   success: function(){
-    //-     alert("post successful")
-    //-   },
-    //-   error: function(){
-    //-     alert("error sending")
-    //-   }
-      
-    //- });
-    //- });
-    //- });

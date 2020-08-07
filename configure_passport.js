@@ -1,3 +1,4 @@
+// Created by Arman, Basel, and Sky
 // Configures app for Authentication using Passport.js
 const session = require("express-session");
 const passport = require("passport");
@@ -19,7 +20,6 @@ module.exports = (app) => {
     // The login function
     passport.use(
         new LocalStrategy((username, password, done) => {
-            //console.log(username, password)
             return data.verifyLogin(username, password, done)
         }));
 

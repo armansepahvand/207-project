@@ -1,3 +1,4 @@
+// Created by Duncan, edited by other team members as well
 const mongoose = require('../mongoose_connect');
 // Creating the Agency Schema
 const AgentSchema = new mongoose.Schema({
@@ -24,7 +25,7 @@ const AgentSchema = new mongoose.Schema({
         type: Number,
         required: true
     }
-    // more fields defined below
+    
 });
 // Creating the Agent collection Model
 module.exports = mongoose.model('Agent', AgentSchema);
