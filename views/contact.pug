@@ -1,7 +1,7 @@
 extends layout
 
 block content
-
+  h1= agents[0]
   // Navigation
   nav.navbar.navbar-expand-md.navbar-light.bg-light.sticky-top
     .container
@@ -22,7 +22,7 @@ block content
             a.nav-link(href="register") Register
           if currentUser
             li.nav-item
-              a.nav-link(href='logedinuser') Profile
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
   .jumbotron.py-4
     div(style="text-align:center")
       h2 We would love to hear from you

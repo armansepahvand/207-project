@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const data = require('../models/mongoose_data');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     let name=req.query.name;

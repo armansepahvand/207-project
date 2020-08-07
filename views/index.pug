@@ -21,7 +21,7 @@ block content
             a.nav-link(href='register') Register
           if currentUser
             li.nav-item
-              a.nav-link(href='logedinuser') Profile
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
 
   br
   // - Carousel
@@ -58,7 +58,7 @@ block content
   
   // Vacay Packages
   .text-center
-    h1.display-4 Vacation Packages
+    h1.display-4(style='color: #6a2c70') Vacation Packages
   br
   br
   .container.col-10
@@ -67,33 +67,135 @@ block content
         a(href="./packages?name=Arizona+Grand+Escape")
           img.img-thumbnail(src='/images/tarizonarocks.jpg' alt='Arizona' title="Arizona's Grand Escape")
         .desc
+          p(style='color: #6a2c70') Arizona&apos;s Grand Escape             
           | The beauty of Arizona is not limited to the Grand Canyon
-          | and golfing, there is so much more to uncover. Discover all the unique experiences now.
+          | and golfing, there is so much more to uncover.
+          | Discover all the unique experiences now.
     .responsive
       .gallery
         a(href='./packages?name=On+Cloud+Wine')
           img.img-thumbnail(src='/images/winetour.jpg' alt='Wine Tour' title='On Cloud Wine')
         .desc
+          p(style='color: #6a2c70') On Cloud Wine          
           | Red, White, or a Ros&eacute;?
           br
-          | Whether you are going it solo; with one friend; or there
-          |                     is a group of you; a Napa Valley Wine Tour is for everyone.
+          | Whether you are going it solo; with one friend; or 
+          | a group of you; a Napa Valley Wine Tour is for everyone.
     .responsive
       .gallery
         a(href='./packages?name=Keep+Calm+and+Wellness+On')
           img.img-thumbnail(src='/images/fishing.jpg' alt='retreat' title='Keep Calm & Wellness On')
         .desc
-          | Come relax at Wellness Lodge for a week, or more. Yoga, meditation, horseback
-          | riding, hiking, and so much more, await you in the Rockies.
+          p(style='color: #6a2c70') Keep Calm &amp; Wellness On
+          | Come relax at Wellness Lodge for a week, or more. Yoga on a cliff; 
+          | horseback riding to a hidden lake, and many hiking adventures, await you.
     .responsive
       .gallery
         a(href='./packages?name=Adventours+in+OZ')
           img.img-thumbnail(src='/images/tree.jpg' alt='Australia' title='Adventours in OZ')
         .desc
+          p(style='color: #6a2c70') Adventours in OZ
           | Not only does it match every taste, budget, age, or
           | interests, but Australia also delivers unique experiences
           | impossible to find anywhere else.
   .clearfix
+  br
+  //Meet the Team
+  
+  .py-5.mb-4.new
+    .container
+    .text-center
+        h1.display-4(style='color: #6a2c70') Sweetpea&apos;s Team
+        br
+        br
+    .container
+      .row
+        .col-xl-3.col-md-6.mb-4
+          .card.border-0
+            .flip-card
+              .flip-card-inner
+                .flip-card-front
+                  img.card-img-top(src='images/Ellaria Tyrell.jpg' alt='Ellaria Tyrell')
+                  .card-body.text-center
+                    h5.card-title.mb-0 Ellaria Tyrell
+                    .card-text.text-black-50
+                    | Team Manager
+                .flip-card-back
+                  h1.person.text- Ellaria Tyrell
+                  p.description.text-black-50 
+                  | Brings over 10 years of travel marketing experience to the team. 
+                  | She loves seeing the smiles on her clients after their trips.
+                  br
+                  | Favourite Vacation - McLeod Ganj, India. The Triund Trek 
+                  | was spectacular and the caves at Kareri Lake are a must see. 
+                  | It was a hard place to leave.            
+        .col-xl-3.col-md-6.mb-4
+          .card.border-0
+            .flip-card
+              .flip-card-inner
+                .flip-card-front
+                  img.card-img-top(src='images/Kaylee Frye.jpg' alt='Kaylee Frye')
+                  .card-body.text-center
+                    h5.card-title.mb-0 Kaylee Frye
+                    .card-text.text-black-50
+                    | Sales Agent
+                .flip-card-back
+                  h1.person.text- Kaylee Frye
+                  p.description.text-black-50 
+                  | Been to over thirty countries before she was 18 and speaks several 
+                  | languages. Loves to travel off the beaten path.
+                  br
+                  | Favorite Vacation - It is my time in Bosnia and Herzegovina,  
+                  | which still speaks to my soul. Around every corner is a new
+                  | experience waiting for you.
+        .col-xl-3.col-md-6.mb-4
+          .card.border-0
+            .flip-card
+              .flip-card-inner
+                .flip-card-front
+                  img.card-img-top(src='images/Amos Burton.jpg' alt='Amos Burton')
+                  .card-body.text-center
+                    h5.card-title.mb-0 Amos Burton
+                    .card-text.text-black-50
+                      | Sales Agent
+                .flip-card-back
+                  h1.person.text- Amos Burton
+                  p.description.text-black-50 
+                  | This backpacker and adrenaline seeker is ready to help you
+                  | find your next great adventure
+                  br
+                  | Favorite Vacation - Sandboarding down the side of Cerro Negro 
+                  | Volacano in Nicaragua and skydiving in Antarctica.  
+        .col-xl-3.col-md-6.mb-4
+          .card.border-0
+            .flip-card
+              .flip-card-inner
+                .flip-card-front
+                  img.card-img-top(src='images/Kira Nerys.jpg' alt='Kira Nerys')
+                  .card-body.text-center
+                    h5.card-title.mb-0 Kira Nerys
+                    .card-text.text-black-50
+                      | Sales Agent
+                .flip-card-back
+                  h1.person.text- Kira Nerys
+                  p.description.text-black-50 
+                  | After studying history and art in the Netherlands, she spent 2 years
+                  | backpacking through Europe. 
+                  br
+                  | Favourite Vacation - The northern lights in Iceland was the most unique
+                  | experience I have ever had. The awe inspiring colors I saw, swirl and 
+                  | snake across the sky, can never be repeated.
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
+  br
   // Connect
   .jumbotron
     .row.text-center

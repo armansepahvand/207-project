@@ -24,6 +24,9 @@ block content
             a.nav-link(href="contact") Contact
           li.nav-item
             a.nav-link(href="register") Register
+          if currentUser
+            li.nav-item
+              a.nav-link(href='logedinuser?id='+ currentUser._id) Profile
   
           
   .container.m-5
@@ -43,7 +46,7 @@ block content
             td= packages.PkgEndDate
             td= packages.PkgDesc
             td= packages.PkgBasePrice + packages.PkgAgencyCommission
-  .container.m-5
+  .container.m-5(style= "padding-bottom: 230px")
     .row
       .col-lg-6
         .gallery
@@ -55,19 +58,19 @@ block content
             input.form-control#Bdate(type="text" name="BookingDate" placeholder="Booking Date")
           .form-group
             label(for="BookingNo") Booking No
-            input.form-control(type="text" name="BookingNo"  placeholder="Booking No")
+            input.form-control#Bno(type="text" name="BookingNo"  placeholder="Booking No")
           .form-group
             label(for="TravelerCount") Traveler Count
             input.form-control(type="number" name="TravelerCount" placeholder="Traveler Count")
           .form-group
             label(for="PCustomerId" style="display:none" ) PCustomerId
-            input.form-control#Cid(type="text" placeholder="" name="PCustomerId" style="display:block" )
+            input.form-control#Cid(type="text" placeholder="" name="PCustomerId" style="display:none" )
             .form-group
             label(for="PackageName" style="display:none" ) PCustomerId
-            input.form-control#Pname(type="text" placeholder="" name="PackageName" style="display:block" )
+            input.form-control#Pname(type="text" placeholder="" name="PackageName" style="display:none" )
           .form-group
             label(for="TripTypeId") Trip Type Id
-            input.form-control(type="text" name="TripTypeId" placeholder="Trip Type Id")
+            input.form-control#Tid(type="text" name="TripTypeId" placeholder="Trip Type Id")
           button.btn.btn-primary(type="submit") Book
   footer.d-flex.justify-content-center.mt-auto
     .font-weight-bold
@@ -90,27 +93,29 @@ block content
     var dd = String(d.getDate()).padStart(2, '0');
     var mm = String(d.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = d.getFullYear();
-
     d = mm + '/' + dd + '/' + yyyy;
     document.getElementById("Bdate").value= d;
-  //script. 
-      function getQueryVariable(variable){
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i=0;i<vars.length;i++) {
-              var pair = vars[i].split("=");
-              if(pair[0] == variable){return pair[1];}
-      }
-      return(false);
-      }
-      let name=getQueryVariable("name");
-      let newname=name.replace(/\+/g, " ");
-      console.log(name);
-      console.log(newname);
-      document.getElementById("name").innerText= newname;
+    function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+    }  
+    function makeTid(length) {
+    var result           = '';
+    var characters       = 'ABCDEF';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+    }  
+    document.getElementById("Bno").value= makeid(5);
+    document.getElementById("Tid").value= makeTid(1);
   
-    
-    document.getElementById("Cid").value= data._id;
         
       
       
