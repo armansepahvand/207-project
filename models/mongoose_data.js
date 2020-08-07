@@ -6,10 +6,10 @@ const Booking = require("./mongoose_models/Booking_model");
 const bcrypt = require("bcryptjs");
 // This function is retrieving the contact info from the DB
 exports.getContactData = (agencyId, callBack) => {
-    if (!agencyId)
-        Agency.find({}, callBack);  // Get all agencies
-    else
-        Agent.find({}, callBack);   // Get Agents for the given agencyId
+  if (!agencyId)
+    Agency.find({}, callBack);  // Get all agencies
+  else
+    Agent.find({}, callBack);   // Get Agents for the given agencyId
 }
 
 // Creates a new user
@@ -52,16 +52,37 @@ exports.updateUser = function (user, callBack) {
       customer.CustHomePhone = user.CustHomePhone;
     }
 
-    // if(typeof user.CustPassword !== 'undefined'){
-    // customer.setPassword( customer.CustPassword);
-    //  }
 
-    console.log("we are in update user", customer);
-    customer.save().then(function () {
+    if (typeof user.CustPassword !== 'undefined') {
+      // user.setPassword(req.body.user.password);
 
-    callBack(null,"Update Successful");
-    });
-  });
+      customer.CustPassword = user.CustPassword;
+      exports.updatePassword = function (user) {
+        
+        bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
+          user.CustPassword = hashedPassword;
+          console.log(hashedPassword);
+          callBack(err, "Ok");
+
+          //customer.CustPassword = user.CustPassword
+          //bcrypt.hash( customer.CustPassword, 10, (err, hashedPassword) => {
+          //user.CustPassword = hashedPassword;
+          //customer.CustPassword = hashedPassword;
+
+        })
+      };
+
+      console.log("we are in update user", customer);
+      customer.save().then(function () {
+
+        callBack(null, "Update Successful");
+
+      });
+
+
+
+    }
+  })
 };
 
 exports.createBooking = function (booking, callBack) {
