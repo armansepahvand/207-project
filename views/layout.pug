@@ -16,7 +16,7 @@ html
       h6.bg-light.text-dark(style='text-align: right;margin-bottom: 0px;')= "Welcome " + currentUser.CustFirstName
         span(style='font-size:0.8em')
           a(href="/log-out") (Log Out)
-          a(href="/logedinuser") (View and edit profile)
+          
     
     else      
       form(action="/log-in" method="POST")
