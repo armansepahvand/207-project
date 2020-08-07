@@ -18,18 +18,19 @@ html
           a(href="/log-out") (Log Out)
           
     
-    else      
-      form(action="/log-in" method="POST")
-        .d-flex.justify-content-end.bg-light
-          .col.text-danger.flex-grow-1= loginmsg
-          //.col.text-white LogIn/
-              a(href="/registerJQuery") Register
-          .col
-            input.form-control.form-control-sm(name="username" placeholder="Username" type="text")
-          .col
-            input.form-control.form-control-sm(name="password" placeholder="Password" type="password")
-          .col.mr-1
-            button(style='background-color: #fe91ca;').btn.btn-sm Log In
+    else 
+      .d-flex.justify-content-end.bg-light     
+        form(action="/log-in" method="POST" )
+          .d-flex.justify-content-end.bg-light
+            .col.text-danger.flex-grow-1= loginmsg
+            //.col.text-white LogIn/
+                a(href="/registerJQuery") Register
+            .col(style="float:right")
+              input.form-control.form-control-sm(name="username" placeholder="Username" type="text")
+            .col(style="float:right")
+              input.form-control.form-control-sm(name="password" placeholder="Password" type="password")
+            .col.mr-1(style="float:right")
+              button(style='background-color: #fe91ca;').btn.btn-sm Log In
   
   //.jumbotron
     h1 Welcome to Travel Experts
