@@ -30,14 +30,14 @@ block content
   
           
   .container.m-5
-    table.table.table-hover
+    table.table.table-hover.table-bordered
       thead
         tr.table-warning
-          td Package Name
-          td Package Start Date
-          td Package End Date
-          td Package Description
-          td Package Price
+          th(scope="col") Package Name
+          th(scope="col") Package Start Date
+          th(scope="col") Package End Date
+          th(scope="col") Package Description
+          th(scope="col") Package Price
           
       tbody
           tr.table-info
