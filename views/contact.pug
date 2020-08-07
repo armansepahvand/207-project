@@ -50,19 +50,9 @@ block content
                 td= row.AgncyPhone
                 td= row.AgncyFax
                 td
-<<<<<<< HEAD
                   button(onclick="window.location.assign('/contact?agencyId=" + row.AgencyId + "')") View Agents
     
     .container.m-5(style='display:block', id='agentstable')
-=======
-                  button.agentbutton(onclick="window.location.assign('/contact?agencyId=" + row.AgencyId + "')") View Agents
-    script.
-     var displayagents = agents
-      if (displayagents != 'undefined') { document.getElementById(agentstable).style.display = 'block'}
-      else {document.getElementById(agentstable).style.display = 'none'}
-
-    .container.m-5(id='agentstable')
->>>>>>> b78f065744b98286d66a9283ba478bc5b36ad2cd
         h1 Sweetpea Travel's Agents:
         table.table.table-hover
           thead
