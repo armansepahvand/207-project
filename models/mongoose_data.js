@@ -55,33 +55,45 @@ exports.updateUser = function (user, callBack) {
 
     if (typeof user.CustPassword !== 'undefined') {
       // user.setPassword(req.body.user.password);
-
       customer.CustPassword = user.CustPassword;
-      exports.updatePassword = function (user) {
-        
-        bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
-          user.CustPassword = hashedPassword;
-          console.log(hashedPassword);
-          callBack(err, "Ok");
+      //user.CustPassword = customer.CustPassword;
+      bcrypt.hash(user.CustPassword, 10, (err, hashedPassword) => {
 
-          //customer.CustPassword = user.CustPassword
-          //bcrypt.hash( customer.CustPassword, 10, (err, hashedPassword) => {
-          //user.CustPassword = hashedPassword;
-          //customer.CustPassword = hashedPassword;
+        customer.CustPassword = hashedPassword;
+        user.CustPassword = hashedPassword;
 
-        })
-      };
 
+        console.log(hashedPassword);
+        console.log("this is the customer", customer.CustPassword)
+        console.log("this is the user", user.CustPassword)
+
+
+        //callBack(err, "Ok");
+
+
+        console.log("we are in bcrypt user", customer);
+        customer.save().then(function () {
+
+          callBack(null, "Update Successful");
+
+        });
+
+        //customer.CustPassword = user.CustPassword
+        //bcrypt.hash( customer.CustPassword, 10, (err, hashedPassword) => {
+        //user.CustPassword = hashedPassword;
+        //customer.CustPassword = hashedPassword;
+
+      })
+    }
+    else {
       console.log("we are in update user", customer);
       customer.save().then(function () {
 
         callBack(null, "Update Successful");
 
       });
-
-
-
     }
+
   })
 };
 
