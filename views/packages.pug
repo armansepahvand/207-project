@@ -32,7 +32,7 @@ block content
   .container.m-5
     table.table.table-hover
       thead
-        tr
+        tr.table-warning
           td Package Name
           td Package Start Date
           td Package End Date
@@ -77,6 +77,8 @@ block content
       h5 © Sweetpea Travel's
   link(href="./stylesheets/style.css" rel="stylesheet")
   script(src="./js/index.js")   
+
+  
   script.
     let rawdata= document.getElementById("Pvar").value;
     let data=JSON.parse(rawdata);
