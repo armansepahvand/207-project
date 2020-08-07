@@ -8,9 +8,11 @@ router.get('/', function (req, res, next) {
   data.getContactData(null, (error, agencies) => {
     if (error) return res.status(500).send('Error ' + error);
     // Get agents information 
-    data.getContactData(1, (error, agents) => {
+    var aID = req.query.agencyId;
+    console.log(aID);
+    data.getContactData(aID, (error, agents) => {
       res.render('contact',
-        { agencies: agencies, agents: agents });
+        { agencies: agencies, agents: agents, aID: aID });
     })
   })
 });

@@ -9,7 +9,7 @@ exports.getContactData = (agencyId, callBack) => {
     if (!agencyId)
         Agency.find({}, callBack);  // Get all agencies
     else
-        Agent.find({}, callBack);   // Get Agents for the given agencyId
+        Agent.find({ AgencyId: agencyId }, callBack);   // Get Agents for the given agencyId
 }
 
 // Creates a new user
