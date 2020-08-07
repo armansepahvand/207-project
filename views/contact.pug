@@ -25,6 +25,57 @@ block content
   .jumbotron.py-4
     div(style="text-align:center")
       h2 We would love to hear from you
+      .container.m-5
+      table.table.table-hover
+        thead
+          tr
+            td Agency ID
+            td Address
+            td City
+            td Province
+            td Postal Code
+            td Country
+            td Phone
+            td Fax
+          tbody
+            each row in agencies
+              - var setid = 'agency' + row.AgencyId
+              tr(id=setid).table-info
+                td= row.AgencyId
+                td= row.AgncyAddress
+                td= row.AgncyCity
+                td= row.AgncyProv
+                td= row.AgncyPostal
+                td= row.AgncyCountry
+                td= row.AgncyPhone
+                td= row.AgncyFax
+                td
+                  button(onclick="window.location.assign('/contact?agencyId=" + row.AgencyId + "')") View Agents
+    
+    .container.m-5(style='display:none', id='agentstable')
+        h1 Sweetpea Travel's Agents:
+        table.table.table-hover
+          thead
+            tr
+            td Branch Number
+            td First Name
+            td Middle Initial
+            td Last Name
+            td Contact Number
+            td Email
+            //td Position
+            //td Agency
+          tbody
+           each row in agents
+            tr.table-info
+            td= row.AgencyId
+            td= row.AgtFirstName
+            td= row.AgtMiddleInitial
+            td= row.AgtLastName
+            td= row.AgtBusPhone
+            td= row.AgtEmail
+            //td= row.AgtPosition
+            //td= row.AgencyId
   section#contact.contact
     .container.my-2
       .row
@@ -335,3 +386,6 @@ block content
     console.log("Country: ", x['country'].value);
     console.log("Subject: ", x['subject'].value);
     });
+
+  script.
+      if (aID != 'undefined') {document.getElementById('agentstable').display = 'block'}

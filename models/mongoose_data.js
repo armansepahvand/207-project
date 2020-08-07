@@ -6,10 +6,10 @@ const Booking = require("./mongoose_models/Booking_model");
 const bcrypt = require("bcryptjs");
 // This function is retrieving the contact info from the DB
 exports.getContactData = (agencyId, callBack) => {
-  if (!agencyId)
-    Agency.find({}, callBack);  // Get all agencies
-  else
-    Agent.find({}, callBack);   // Get Agents for the given agencyId
+    if (!agencyId)
+        Agency.find({}, callBack);  // Get all agencies
+    else
+        Agent.find({ AgencyId: agencyId }, callBack);   // Get Agents for the given agencyId
 }
 
 // Creates a new user
