@@ -1,23 +1,23 @@
 // Created by all team members
 // Requiring modules
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
 // Requiring routers for page paths
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var aboutRouter = require('./routes/about');
-var contactRouter = require('./routes/contact');
-var registerRouter = require('./routes/register');
-var packagesRouter = require('./routes/packages');
-var BookingRouter = require('./routes/test');
-var logedinuserRouter = require('./routes/logedinuser');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const aboutRouter = require('./routes/about');
+const contactRouter = require('./routes/contact');
+const registerRouter = require('./routes/register');
+const packagesRouter = require('./routes/packages');
+const BookingRouter = require('./routes/test');
+const logedinuserRouter = require('./routes/logedinuser');
 const configPassport = require('./configure_passport');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
